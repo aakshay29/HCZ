@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 
 /**
@@ -22,7 +21,7 @@ public class Hczuser implements Serializable {
 
 	private String userpassword;
 
-	private BigDecimal userrole;
+	private long userrole;
 
 	public Hczuser() {
 	}
@@ -51,11 +50,11 @@ public class Hczuser implements Serializable {
 		this.userpassword = userpassword;
 	}
 
-	public BigDecimal getUserrole() {
+	public long getUserrole() {
 		return this.userrole;
 	}
 
-	public void setUserrole(BigDecimal userrole) {
+	public void setUserrole(long userrole) {
 		this.userrole = userrole;
 	}
 

@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -26,7 +25,7 @@ public class Hczjob implements Serializable {
 
 	private String jobqualifications;
 
-	private BigDecimal jobstatus;
+	private long jobstatus;
 
 	//bi-directional many-to-one association to Hczapplication
 	@OneToMany(mappedBy="hczjob")
@@ -67,11 +66,11 @@ public class Hczjob implements Serializable {
 		this.jobqualifications = jobqualifications;
 	}
 
-	public BigDecimal getJobstatus() {
+	public long getJobstatus() {
 		return this.jobstatus;
 	}
 
-	public void setJobstatus(BigDecimal jobstatus) {
+	public void setJobstatus(long jobstatus) {
 		this.jobstatus = jobstatus;
 	}
 

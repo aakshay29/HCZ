@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 
 /**
@@ -18,29 +17,29 @@ public class Hczapplicationstatus implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long statusid;
 
-	private BigDecimal alcoholtest;
+	private long alcoholtest;
 
-	private BigDecimal codingtest;
+	private long codingtest;
 
-	private BigDecimal dottest;
+	private long dottest;
 
-	private BigDecimal educationdegree;
+	private long educationdegree;
 
-	private BigDecimal groupinterview;
+	private long groupinterview;
 
-	private BigDecimal hrinterview;
+	private long hrinterview;
 
-	private BigDecimal managerinterview;
+	private long managerinterview;
 
-	private BigDecimal nationality;
+	private long nationality;
 
-	private BigDecimal standardpaneltest;
+	private long standardpaneltest;
 
 	private String status;
 
-	private BigDecimal veteran;
+	private long veteran;
 
-	private BigDecimal workhistory;
+	private long workhistory;
 
 	//bi-directional many-to-one association to Hczapplication
 	@ManyToOne
@@ -58,75 +57,75 @@ public class Hczapplicationstatus implements Serializable {
 		this.statusid = statusid;
 	}
 
-	public BigDecimal getAlcoholtest() {
+	public long getAlcoholtest() {
 		return this.alcoholtest;
 	}
 
-	public void setAlcoholtest(BigDecimal alcoholtest) {
+	public void setAlcoholtest(long alcoholtest) {
 		this.alcoholtest = alcoholtest;
 	}
 
-	public BigDecimal getCodingtest() {
+	public long getCodingtest() {
 		return this.codingtest;
 	}
 
-	public void setCodingtest(BigDecimal codingtest) {
+	public void setCodingtest(long codingtest) {
 		this.codingtest = codingtest;
 	}
 
-	public BigDecimal getDottest() {
+	public long getDottest() {
 		return this.dottest;
 	}
 
-	public void setDottest(BigDecimal dottest) {
+	public void setDottest(long dottest) {
 		this.dottest = dottest;
 	}
 
-	public BigDecimal getEducationdegree() {
+	public long getEducationdegree() {
 		return this.educationdegree;
 	}
 
-	public void setEducationdegree(BigDecimal educationdegree) {
+	public void setEducationdegree(long educationdegree) {
 		this.educationdegree = educationdegree;
 	}
 
-	public BigDecimal getGroupinterview() {
+	public long getGroupinterview() {
 		return this.groupinterview;
 	}
 
-	public void setGroupinterview(BigDecimal groupinterview) {
+	public void setGroupinterview(long groupinterview) {
 		this.groupinterview = groupinterview;
 	}
 
-	public BigDecimal getHrinterview() {
+	public long getHrinterview() {
 		return this.hrinterview;
 	}
 
-	public void setHrinterview(BigDecimal hrinterview) {
+	public void setHrinterview(long hrinterview) {
 		this.hrinterview = hrinterview;
 	}
 
-	public BigDecimal getManagerinterview() {
+	public long getManagerinterview() {
 		return this.managerinterview;
 	}
 
-	public void setManagerinterview(BigDecimal managerinterview) {
+	public void setManagerinterview(long managerinterview) {
 		this.managerinterview = managerinterview;
 	}
 
-	public BigDecimal getNationality() {
+	public long getNationality() {
 		return this.nationality;
 	}
 
-	public void setNationality(BigDecimal nationality) {
+	public void setNationality(long nationality) {
 		this.nationality = nationality;
 	}
 
-	public BigDecimal getStandardpaneltest() {
+	public long getStandardpaneltest() {
 		return this.standardpaneltest;
 	}
 
-	public void setStandardpaneltest(BigDecimal standardpaneltest) {
+	public void setStandardpaneltest(long standardpaneltest) {
 		this.standardpaneltest = standardpaneltest;
 	}
 
@@ -138,19 +137,19 @@ public class Hczapplicationstatus implements Serializable {
 		this.status = status;
 	}
 
-	public BigDecimal getVeteran() {
+	public long getVeteran() {
 		return this.veteran;
 	}
 
-	public void setVeteran(BigDecimal veteran) {
+	public void setVeteran(long veteran) {
 		this.veteran = veteran;
 	}
 
-	public BigDecimal getWorkhistory() {
+	public long getWorkhistory() {
 		return this.workhistory;
 	}
 
-	public void setWorkhistory(BigDecimal workhistory) {
+	public void setWorkhistory(long workhistory) {
 		this.workhistory = workhistory;
 	}
 

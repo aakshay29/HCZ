@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -27,9 +26,9 @@ public class Hczapplication implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date birthday;
 
-	private BigDecimal citizen;
+	private long citizen;
 
-	private BigDecimal druguser;
+	private long druguser;
 
 	private String education;
 
@@ -39,7 +38,7 @@ public class Hczapplication implements Serializable {
 
 	private String jobhistory;
 
-	private BigDecimal veteran;
+	private long veteran;
 
 	//bi-directional many-to-one association to Hczjob
 	@ManyToOne
@@ -85,19 +84,19 @@ public class Hczapplication implements Serializable {
 		this.birthday = birthday;
 	}
 
-	public BigDecimal getCitizen() {
+	public long getCitizen() {
 		return this.citizen;
 	}
 
-	public void setCitizen(BigDecimal citizen) {
+	public void setCitizen(long citizen) {
 		this.citizen = citizen;
 	}
 
-	public BigDecimal getDruguser() {
+	public long getDruguser() {
 		return this.druguser;
 	}
 
-	public void setDruguser(BigDecimal druguser) {
+	public void setDruguser(long druguser) {
 		this.druguser = druguser;
 	}
 
@@ -133,11 +132,11 @@ public class Hczapplication implements Serializable {
 		this.jobhistory = jobhistory;
 	}
 
-	public BigDecimal getVeteran() {
+	public long getVeteran() {
 		return this.veteran;
 	}
 
-	public void setVeteran(BigDecimal veteran) {
+	public void setVeteran(long veteran) {
 		this.veteran = veteran;
 	}
 
