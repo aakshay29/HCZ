@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Application List</title>
+<title>Application Status List</title>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -15,18 +15,20 @@
 			<thead>
 				<tr>
 					<th>ID</th>
+					<th>Name</th>
 					<th>Status</th>
-					<th>Job ID</th>
-					<th>Name</th>				
-					<th>Address</th>
-					<th>Birthday</th>
-					<th>Education</th>
-					<th>References</th>
-					<th>Resume</th>
-					<th>History</th>
-					<th>Citizen</th>
-					<th>Drug User</th>
-					<th>Veteran</th>
+					<th>Nationality</th><!-- YN -->
+					<th>History</th><!-- YN -->
+					<th>Reference</th><!-- YN -->
+					<th>Degree</th><!-- YN -->
+					<th>Health Panel</th><!-- YN -->
+					<th>Health DOT</th><!-- YN -->
+					<th>Health Alcohol</th><!-- YN -->
+					<th>Veteran</th><!-- YN -->
+					<th>HR Interview</th><!-- Scheduled, Next, Reject -->
+					<th>Second Interview</th><!-- Scheduled, Next, Reject -->
+					<th>Group Interview</th><!-- Scheduled, Next, Reject -->
+					<th>Test</th><!-- PF -->
 					<th>Edit</th>
 				</tr>
 			</thead>
@@ -34,9 +36,9 @@
 				<c:forEach var="applicationList" items="${applicationList}">
 					<tr>
 						<td><c:out value="${applicationList.applicationid}" /></td>
-						<td><c:out value="${applicationList.hczapplicationstatuses.status}" /></td>
 						<td><c:out value="${applicationList.hczjob.jobid}" /></td>
-						<td><c:out value="${applicationList.applicantname}" /></td>					
+						<td><c:out value="${applicationList.applicantname}" /></td>
+						<td><c:out value="${applicationList.hczapplicationstatuses.status}" /></td>
 						<td><c:out value="${applicationList.address}" /></td>
 						<td><c:out value="${applicationList.birthday}" /></td>
 						<td><c:out value="${applicationList.education}" /></td>
