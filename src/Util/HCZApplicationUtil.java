@@ -22,4 +22,18 @@ public class HCZApplicationUtil {
 		}
 		return applicationList;
 	}
+	public static Hczapplication getApplication(int applicationID) {
+		EntityManager em = DBUtil.getEmFactory().createEntityManager();	
+		TypedQuery<Hczapplication> query = em.createQuery("SELECT a FROM Hczapplication a where a.applicationid = :applicationID", Hczapplication.class);
+		query.setParameter("applicationID", applicationID);
+		Hczapplication application = null;
+		try {
+			application = query.getSingleResult();		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			em.close();
+		}
+		return application;
+	}
 }
