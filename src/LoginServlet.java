@@ -55,11 +55,13 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("user", user);
 			session.setAttribute("applicationList", applicationList);
 			session.setAttribute("applicationListStatus", applicationListStatus);
+			System.out.println("Logged In!");
 			
 			nextUrl = "/applicationList.jsp";
 		}
 		else{
 			nextUrl = "/hrLogin.jsp";
+			System.out.println("Invalid User!");
 		}
 		
 		response.sendRedirect(request.getContextPath()+nextUrl);
