@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 import Util.HCZApplicationUtil;
+import Util.HCZJobUtil;
 import model.Hczapplication;
 import model.Hczjob;
 
@@ -67,7 +68,7 @@ public class ApplicationServlet extends HttpServlet {
 	String DrugAddict =request.getParameter("DrugAddictions");
 	String birthday =request.getParameter("Birthday");
 	
-	Hczjob jb = 
+	Hczjob hczjob = HCZJobUtil.getJob(Float.parseFloat(jobid));
 	
 	Hczapplication app =new Hczapplication();
 	SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
@@ -83,7 +84,7 @@ public class ApplicationServlet extends HttpServlet {
 		app.setEmpreferences(firstreference);
 		app.setEducation(degree);
 		app.setBirthday(sqlDate);
-	
+		app.setHczjob(hczjob);
 	
 		if(veteran.equalsIgnoreCase("yes")) {
 			app.setVeteran(1);

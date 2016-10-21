@@ -27,4 +27,20 @@ public class HCZJobUtil {
 		return jobs;
 		
 	}
+	public static  Hczjob getJob(float jobid) {
+		EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		String qString = "Select u from Hczjob u where u.jobid= :jobid";
+		TypedQuery<Hczjob> q = em.createQuery(qString, Hczjob.class);
+		q.setParameter("jobid", jobid);
+		Hczjob job = null;
+		try {
+			job = q.getSingleResult();
+		} catch (NoResultException e) {
+			System.out.println(e);
+		} finally {
+			em.close();
+		}
+		return job;
+		
+	}
 }
