@@ -41,19 +41,20 @@ public class UpdateServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String nextUrl = "";
 		String status = "";
-		int statusID = Integer.parseInt(request.getParameter("statusID"));	
-		int statusNationality = Integer.parseInt(request.getParameter("statusNationality"));	
-		int statusHistory = Integer.parseInt(request.getParameter("statusHistory"));	
-		int statusDegree = Integer.parseInt(request.getParameter("statusDegree"));	
-		int statusPanel = Integer.parseInt(request.getParameter("statusPanel"));	
-		int statusDot = Integer.parseInt(request.getParameter("statusDot"));	
-		int statusAlcohol = Integer.parseInt(request.getParameter("statusAlcohol"));	
-		int statusVeteran = Integer.parseInt(request.getParameter("statusVeteran"));	
-		int statusHrinterview = Integer.parseInt(request.getParameter("statusHrinterview"));	
-		int statusSecondinterview = Integer.parseInt(request.getParameter("statusSecondinterview"));	
-		int statusGroupinterview = Integer.parseInt(request.getParameter("statusGroupinterview"));	
-		int statusTest = Integer.parseInt(request.getParameter("statusTest"));	
-		int statusAprroval = Integer.parseInt(request.getParameter("statusApproval"));	
+				
+		long statusDot = Long.parseLong(request.getParameter("statusDot"));	
+		long statusID = Long.parseLong(request.getParameter("statusId"));	
+		long statusNationality = Long.parseLong(request.getParameter("statusNationality"));	
+		long statusHistory = Long.parseLong(request.getParameter("statusHistory"));	
+		long statusDegree = Long.parseLong(request.getParameter("statusDegree"));	
+		long statusPanel = Long.parseLong(request.getParameter("statusPanel"));	
+		long statusAlcohol = Long.parseLong(request.getParameter("statusAlcohol"));	
+		long statusHrinterview = Long.parseLong(request.getParameter("statusHrinterview"));
+		long statusVeteran = Long.parseLong(request.getParameter("statusVeteran"));	
+		long statusSecondinterview = Long.parseLong(request.getParameter("statusSecondinterview"));	
+		long statusGroupinterview = Long.parseLong(request.getParameter("statusGroupinterview"));	
+		long statusTest = Long.parseLong(request.getParameter("statusTest"));	
+		long statusAprroval = Long.parseLong(request.getParameter("statusApproval"));	
 		Hczapplicationstatus applicationStatus = HCZApplicationStatusUtil.getApplicationStatus(statusID);
 			
 		if(statusAprroval == 2){

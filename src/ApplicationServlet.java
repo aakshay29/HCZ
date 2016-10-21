@@ -67,7 +67,7 @@ public class ApplicationServlet extends HttpServlet {
 	String DrugAddict =request.getParameter("DrugAddictions");
 	String birthday =request.getParameter("Birthday");
 	
-	
+	Hczjob jb = 
 	
 	Hczapplication app =new Hczapplication();
 	SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");

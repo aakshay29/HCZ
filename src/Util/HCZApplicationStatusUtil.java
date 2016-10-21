@@ -23,7 +23,7 @@ public class HCZApplicationStatusUtil {
 		}
 		return applicationStatusList;
 	}
-	public static Hczapplicationstatus getApplicationStatus(int statusID) {
+	public static Hczapplicationstatus getApplicationStatus(long statusID) {
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();	
 		TypedQuery<Hczapplicationstatus> query = em.createQuery("SELECT s FROM Hczapplicationstatus s where s.statusid = :statusID", Hczapplicationstatus.class);
 		query.setParameter("statusID", statusID);
