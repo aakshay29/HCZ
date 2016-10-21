@@ -3,9 +3,11 @@ package Util;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import UserData.DBUtil;
+
 import model.Hczapplication;
 
 public class HCZApplicationUtil {
@@ -36,4 +38,20 @@ public class HCZApplicationUtil {
 		}
 		return application;
 	}
+	
+	 public static void update(Hczapplication app) {
+		 EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		 EntityTransaction trans = em.getTransaction();
+		 try {
+		 trans.begin();
+		 em.merge(app);
+		 trans.commit();
+		 } catch (Exception e) {
+		 System.out.println(e);
+		 trans.rollback();
+		 } finally {
+		 em.close();
+		 }
+		 }
+	 
 }

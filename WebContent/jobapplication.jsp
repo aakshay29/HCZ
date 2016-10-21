@@ -10,10 +10,12 @@
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<form action= "" method="post">
- <div class="tab-content">
+
+  <div class="tab-content">
+  				
 							<div class="tab-pane active" id="horizontal-form">
-								<form class="form-horizontal">
+								<form class="form-horizontal" action="ApplicationServlet" method="post">
+							
 									<div class="form-group">
 									<br>
 									<div class="form-group">
@@ -60,39 +62,40 @@
 										</div>
 									</div>
 									
-									<div class="form-group">
-										<label class="col-sm-2 control-label">Prior Experience</label>
-										<div class="col-sm-8">
-											<select multiple="" class="form-control1">
-												<option>Experienced</option>
-												<option>College Graduate</option>
-												
-											</select>
-										</div>
-									</div>
+								
 									
-									<c:if test="">
+									
 									<div class="form-group">
 										<label for="txtarea1" class="col-sm-2 control-label">Roles and Responsibilities</label>
 										<div class="col-sm-8"><textarea name="txtarea1" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
 									</div>
-									</c:if>
 									
-									
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">1. Reference</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" id="FirstRefrence" placeholder="Email">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">2. Reference</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" id="SecondRefrence" placeholder="Email">
+										</div>
+									</div>
 									
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Veteran</label>
 										<div class="col-sm-8">
-											<div class="radio-inline"><label><input type="radio"> Yes</label></div>
-											<div class="radio-inline"><label><input type="radio"> No</label></div>
+											<div class="radio-inline"><label><input type="radio" name="VetStatus" value="Yes"> Yes</label></div>
+											<div class="radio-inline"><label><input type="radio" name="VetStatus" value="No"> No</label></div>
 											
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-2 control-label">US National/Citizen</label>
 										<div class="col-sm-8">
-											<div class="radio-inline"><label><input type="radio"> Yes</label></div>
-											<div class="radio-inline"><label><input type="radio"> No</label></div>
+											<div class="radio-inline"><label><input type="radio" name="Citizen" value="Yes"> Yes</label></div>
+											<div class="radio-inline"><label><input type="radio" name="Citizen" value="No"> No</label></div>
 											
 										</div>
 									</div>
@@ -100,19 +103,19 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Drug Addictions</label>
 										<div class="col-sm-8">
-											<div class="radio-inline"><label><input type="radio"> Yes</label></div>
-											<div class="radio-inline"><label><input type="radio"> No</label></div>
+											<div class="radio-inline"><label><input type="radio" name="DrugAddictions" value="Yes"> Yes</label></div>
+											<div class="radio-inline"><label><input type="radio"name="DrugAddictions" value="No"> No</label></div>
 											
 										</div>
 									</div>
+										<center>		  
+											<input type="submit" value="Submit Application"/>
+												</center>
 									</form>
-									
 							</div>
 						</div>	
-						<center>		  
-					<input type="submit" value="Submit Application"/>
-					</center>
-					</form>
+					
+					
 		</body>
 		</html>
 <jsp:include page="footer.jsp"></jsp:include>
