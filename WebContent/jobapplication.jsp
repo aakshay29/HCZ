@@ -21,35 +21,42 @@
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Email</label>
 										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" id="Emailinput" placeholder="Email">
+											<input type="text" type="text" class="form-control1" name="Emailinput" placeholder="Email">
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="inputPassword" class="col-sm-2 control-label">Create a Password</label>
 										<div class="col-sm-8">
-											<input type="password" class="form-control1" id="inputPassword" placeholder="Password">
+											<input type="password" class="form-control1" name="inputPassword" placeholder="Password">
 										</div>
 									</div>
 										<label for="focusedinput" class="col-sm-2 control-label">Your Name</label>
 										<div class="col-sm-8">
-											<input type="text" class="form-control1" id="Nameinput" placeholder="Enter Name">
+											<input type="text" class="form-control1" name="Nameinput" placeholder="Enter Name">
 										</div>
 										
 									</div>
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Address</label>
 										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" id="Addressinput" placeholder="Address">
+											<input type="text" type="text" class="form-control1" name="Addressinput" placeholder="Address">
+										</div>
+									</div>
+									
+										<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Birthday</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="Birthday" placeholder="dd-Mon-YYYY">
 										</div>
 									</div>
 									
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Education</label>
 										<div class="col-sm-8">
-											<div class="checkbox-inline1"><label><input type="checkbox"> Phd/Doctorate</label></div>
-											<div class="checkbox-inline1"><label><input type="checkbox"> MBA</label></div>
-											<div class="checkbox-inline1"><label><input type="checkbox"> Masters/M.s</label></div>
-											<div class="checkbox-inline1"><label><input type="checkbox"> Bachelors</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="Phd"> Phd/Doctorate</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="MBA"> MBA</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="Master"> Masters/M.s</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="Bachelor's"> Bachelors</label></div>
 										</div>
 									</div>
 
@@ -67,13 +74,13 @@
 									
 									<div class="form-group">
 										<label for="txtarea1" class="col-sm-2 control-label">Roles and Responsibilities</label>
-										<div class="col-sm-8"><textarea name="txtarea1" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
+										<div class="col-sm-8"><textarea name="experience" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
 									</div>
 									
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">1. Reference</label>
 										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" id="FirstRefrence" placeholder="Email">
+											<input type="text" type="text" class="form-control1" name="FirstReference" placeholder="Email">
 										</div>
 									</div>
 									<div class="form-group">
