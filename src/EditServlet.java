@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import Util.HCZApplicationUtil;
 import model.Hczapplication;
+import model.Hczapplicationstatus;
 import model.Hczuser;
 
 /**
@@ -40,28 +41,31 @@ public class EditServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		String nextUrl = "";
 		Hczuser user = (Hczuser) session.getAttribute("user");
 		int applicationID = Integer.parseInt(request.getParameter("applicationID"));	
 		Hczapplication application = HCZApplicationUtil.getApplication(applicationID);
+		Hczapplicationstatus applicationStatus = application.getHczapplicationstatuses().get(0);
+		session.setAttribute("applicationStatus", applicationStatus);
 		long role = user.getUserrole();
 		if(role == 1){//HR Manager - HR Interview, 
-			
+			nextUrl = "/editApplication.jsp";
 		}
 		if(role == 2){//HR Specialist - Degrees
-			
+			nextUrl = "/editApplication.jsp";
 		}
 		if(role == 3){//HR Assistant - History, Reference, Veteran
-	
+			nextUrl = "/editApplication.jsp";
 		}
 		if(role == 4){//Health Care Professional - Drug
-	
+			nextUrl = "/editApplication.jsp";
 		}
 		if(role == 5){//Compliance Officer - Nationality
-			
+			nextUrl = "/editApplication.jsp";
 		}
 		if(role == 6){//Hiring Manager - Second Interview
-			
+			nextUrl = "/editApplication.jsp";
 		}
+		response.sendRedirect(request.getContextPath()+nextUrl);
 	}
-
 }

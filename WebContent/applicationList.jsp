@@ -15,7 +15,6 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Status</th>
 					<th>Job ID</th>
 					<th>Name</th>				
 					<th>Address</th>
@@ -34,7 +33,6 @@
 				<c:forEach var="applicationList" items="${applicationList}">
 					<tr>
 						<td><c:out value="${applicationList.applicationid}" /></td>
-						<td><c:out value="${applicationList.hczapplicationstatuses.status}" /></td>
 						<td><c:out value="${applicationList.hczjob.jobid}" /></td>
 						<td><c:out value="${applicationList.applicantname}" /></td>					
 						<td><c:out value="${applicationList.address}" /></td>
@@ -47,8 +45,8 @@
 						<td><c:out value="${applicationList.druguser}" /></td>					
 						<td><c:out value="${applicationList.veteran}" /></td>
 						<td>
-						<form action="EditApplicationServlet" method="post">
-							<input type="hidden" name="applicationID"value=<c:out value="${applicationList.applicationID}" />> 
+						<form action="EditServlet" method="post">
+							<input type="hidden" name="applicationID" value=<c:out value="${applicationList.applicationid}" />> 
 							<input type="hidden" name="action" value="edit"> 
 							<input type="submit" value="Edit" id="submit">
 						</form>
