@@ -19,7 +19,6 @@
 					<th>Status</th>
 					<th>Nationality</th><!-- YN -->
 					<th>History</th><!-- YN -->
-					<th>Reference</th><!-- YN -->
 					<th>Degree</th><!-- YN -->
 					<th>Health Panel</th><!-- YN -->
 					<th>Health DOT</th><!-- YN -->
@@ -35,34 +34,135 @@
 			<tbody>
 				<c:forEach var="applicationStatusList" items="${applicationStatusList}">
 					<tr>
+						
+						<td><c:out value="${applicationStatusList.statusid}" /></td>
+						<td><c:out value="${applicationStatusList.hczapplication.applicantname}" /></td>
+						<td><c:out value="${applicationStatusList.status}" /></td>
 						<c:choose>
-						  <c:when test="${applicationList.applicationid == 1}">
-						    do something
+						  <c:when test="${applicationStatusList.nationality == 1}">
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
-						  <c:when test="${another boolean expr}">
-						    do something else
+						  <c:when test="${applicationStatusList.nationality == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
 						  </c:when>
 						  <c:otherwise>
-						    do this when nothing else is true
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
 						  </c:otherwise>
 						</c:choose>
-						<td><c:out value="${applicationStatusList.statusid}" /></td>
-						<td><c:out value="${applicationStatusList.hczjob.jobid}" /></td>
-						<td><c:out value="${applicationStatusList.applicantname}" /></td>
-						<td><c:out value="${applicationStatusList.hczapplicationstatuses.status}" /></td>
-						<td><c:out value="${applicationStatusList.address}" /></td>
-						<td><c:out value="${applicationStatusList.birthday}" /></td>
-						<td><c:out value="${applicationStatusList.education}" /></td>
-						<td><c:out value="${applicationStatusList.empreferences}" /></td>
-						<td><c:out value="${applicationStatusList.empresume}" /></td>
-						<td><c:out value="${applicationStatusList.jobhistory}" /></td>
-						<td><c:out value="${applicationStatusList.citizen}" /></td>
-						<td><c:out value="${applicationStatusList.druguser}" /></td>					
-						<td><c:out value="${applicationStatusList.veteran}" /></td>
+						<c:choose>
+						  <c:when test="${applicationStatusList.workhistory == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.workhistory == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.educationdegree == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.educationdegree == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.standardpaneltest == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.standardpaneltest == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.dottest == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.dottest == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.alcoholtest == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.alcoholtest == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.veteran == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.veteran == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.hrinterview == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.hrinterview == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.managerinterview == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.managerinterview == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.groupinterview == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.groupinterview == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
+						<c:choose>
+						  <c:when test="${applicationStatusList.codingtest == 1}">
+						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						  </c:when>
+						  <c:when test="${applicationStatusList.codingtest == 0}">
+						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
+						  </c:when>
+						  <c:otherwise>
+						    <td bgcolor="8080ff"> <font color="white">Invalid</font> </td>
+						  </c:otherwise>
+						</c:choose>
 						<td>
-						<form action="EditApplicationServlet" method="post">
-							<input type="hidden" name="applicationID"value=<c:out value="${applicationList.applicationID}" />> 
-							<input type="hidden" name="action" value="edit"> 
+						<form action="EditServlet" method="post">
+							<input type="hidden" name="statusID" value=<c:out value="${applicationStatusList.statusid}" />> 
+							<input type="hidden" name="action" value="ASL"> 
 							<input type="submit" value="Edit" id="submit">
 						</form>
 						</td>

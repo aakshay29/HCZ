@@ -51,10 +51,11 @@ public class LoginServlet extends HttpServlet {
 		Hczuser user = HCZUserUtil.isValidUser(username, password);
 		if(user != null){		
 			List<Hczapplication> applicationList = HCZApplicationUtil.getApplicationList();
-			List<Hczapplicationstatus> applicationListStatus = HCZApplicationStatusUtil.getApplicationStatusList();
+			List<Hczapplicationstatus> applicationStatusList = HCZApplicationStatusUtil.getApplicationStatusList();
+			System.out.println("status: " + applicationStatusList.get(0).getDottest());
 			session.setAttribute("user", user);
 			session.setAttribute("applicationList", applicationList);
-			session.setAttribute("applicationListStatus", applicationListStatus);
+			session.setAttribute("applicationStatusList", applicationStatusList);
 			System.out.println("Logged In!");
 			
 			nextUrl = "/applicationList.jsp";

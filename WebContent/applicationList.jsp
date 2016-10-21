@@ -47,7 +47,7 @@
 						<td>
 						<form action="EditServlet" method="post">
 							<input type="hidden" name="applicationID" value=<c:out value="${applicationList.applicationid}" />> 
-							<input type="hidden" name="action" value="edit"> 
+							<input type="hidden" name="action" value="AL"> 
 							<input type="submit" value="Edit" id="submit">
 						</form>
 						</td>
