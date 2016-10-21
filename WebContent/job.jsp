@@ -33,7 +33,8 @@
 						<td><h1 id="h6.-bootstrap-heading">Closed<a class="anchorjs-link" href="#h1.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h1></td>
 						</c:if>
 						<c:if test="${job.jobstatus == 1}" >
-						<td><h1 id="h6.-bootstrap-heading"><a href="jobapplication.jsp" > Open </a> </h1>
+						<td><h1 id="h6.-bootstrap-heading"><a href="jobapplication.jsp?jobid=${job.jobid}"> Open </a> </h1>
+						<input type="hidden" name="jobid" value="${job.jobid}">
 						<p1>Click to Apply</p1></td>
 						</c:if>
 							
@@ -41,7 +42,7 @@
 					</tr>
 				</c:forEach>
 				<tr>
-				<td>TotalAmount:</td>
+				
 				
 				<td></td>
 				

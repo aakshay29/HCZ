@@ -18,6 +18,12 @@
 							
 									<div class="form-group">
 									<br>
+										<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Job ID</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="jobid" value = <%=request.getParameter("jobid") %>>
+										</div>
+									</div>
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Email</label>
 										<div class="col-sm-8">

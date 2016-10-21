@@ -1,19 +1,22 @@
 
 
 import java.io.IOException;
-import java.sql.Date;
+
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 import Util.HCZApplicationUtil;
 import model.Hczapplication;
+import model.Hczjob;
 
 /**
  * Servlet implementation class ApplicationServlet
@@ -41,8 +44,14 @@ public class ApplicationServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
 		// TODO Auto-generated method stub
+		
+		
+	HttpSession session = request.getSession();
+		
+	String jobid= request.getParameter("jobid");
+	System.out.println("Job id is "+ jobid);
 	String name=request.getParameter("Nameinput");
 	System.out.println("Input name is " +name);
 	String address=request.getParameter("Addressinput");
@@ -60,15 +69,21 @@ public class ApplicationServlet extends HttpServlet {
 	
 	
 	
-	
 	Hczapplication app =new Hczapplication();
-	Date dt =new Date(Long.parseLong(birthday));
-	app.setApplicantname(name);
-	app.setAddress(address);
-	app.setJobhistory(jobhistory);
-	app.setEmpreferences(firstreference);
-	app.setEducation(degree);
-	app.setBirthday(dt);
+	SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+	Date dt;
+	try {
+		dt =   formatter.parse(birthday);
+		java.sql.Date sqlDate = new java.sql.Date(dt.getTime());
+		System.out.println("The date is " + sqlDate);
+	
+		app.setApplicantname(name);
+		app.setAddress(address);
+		app.setJobhistory(jobhistory);
+		app.setEmpreferences(firstreference);
+		app.setEducation(degree);
+		app.setBirthday(sqlDate);
+	
 	
 		if(veteran.equalsIgnoreCase("yes")) {
 			app.setVeteran(1);
@@ -93,6 +108,11 @@ public class ApplicationServlet extends HttpServlet {
 		
 		HCZApplicationUtil.update(app);
 		System.out.println("record inserted");
+	} catch (java.text.ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
- 
+	
+	
+}
 }
