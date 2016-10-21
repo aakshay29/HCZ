@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Util.HCZApplicationStatusUtil;
 import Util.HCZApplicationUtil;
 import model.Hczapplication;
 import model.Hczapplicationstatus;
@@ -40,12 +41,20 @@ public class EditServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String action = request.getParameter("action");	
 		HttpSession session = request.getSession();
 		String nextUrl = "";
 		Hczuser user = (Hczuser) session.getAttribute("user");
-		int applicationID = Integer.parseInt(request.getParameter("applicationID"));	
-		Hczapplication application = HCZApplicationUtil.getApplication(applicationID);
-		Hczapplicationstatus applicationStatus = application.getHczapplicationstatuses().get(0);
+		Hczapplicationstatus applicationStatus = null;
+		if(action.equalsIgnoreCase("AL")){
+			int applicationID = Integer.parseInt(request.getParameter("applicationID"));	
+			Hczapplication application = HCZApplicationUtil.getApplication(applicationID);
+			applicationStatus = application.getHczapplicationstatuses().get(0);
+		}
+		if(action.equalsIgnoreCase("ASL")){
+			int statusID = Integer.parseInt(request.getParameter("statusID"));	
+			applicationStatus = HCZApplicationStatusUtil.getApplicationStatus(statusID);
+		}	
 		session.setAttribute("applicationStatus", applicationStatus);
 		long role = user.getUserrole();
 		if(role == 1){//HR Manager - HR Interview, 
