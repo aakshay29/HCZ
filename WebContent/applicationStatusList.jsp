@@ -33,21 +33,32 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="applicationList" items="${applicationList}">
+				<c:forEach var="applicationStatusList" items="${applicationStatusList}">
 					<tr>
-						<td><c:out value="${applicationList.applicationid}" /></td>
-						<td><c:out value="${applicationList.hczjob.jobid}" /></td>
-						<td><c:out value="${applicationList.applicantname}" /></td>
-						<td><c:out value="${applicationList.hczapplicationstatuses.status}" /></td>
-						<td><c:out value="${applicationList.address}" /></td>
-						<td><c:out value="${applicationList.birthday}" /></td>
-						<td><c:out value="${applicationList.education}" /></td>
-						<td><c:out value="${applicationList.empreferences}" /></td>
-						<td><c:out value="${applicationList.empresume}" /></td>
-						<td><c:out value="${applicationList.jobhistory}" /></td>
-						<td><c:out value="${applicationList.citizen}" /></td>
-						<td><c:out value="${applicationList.druguser}" /></td>					
-						<td><c:out value="${applicationList.veteran}" /></td>
+						<c:choose>
+						  <c:when test="${applicationList.applicationid == 1}">
+						    do something
+						  </c:when>
+						  <c:when test="${another boolean expr}">
+						    do something else
+						  </c:when>
+						  <c:otherwise>
+						    do this when nothing else is true
+						  </c:otherwise>
+						</c:choose>
+						<td><c:out value="${applicationStatusList.statusid}" /></td>
+						<td><c:out value="${applicationStatusList.hczjob.jobid}" /></td>
+						<td><c:out value="${applicationStatusList.applicantname}" /></td>
+						<td><c:out value="${applicationStatusList.hczapplicationstatuses.status}" /></td>
+						<td><c:out value="${applicationStatusList.address}" /></td>
+						<td><c:out value="${applicationStatusList.birthday}" /></td>
+						<td><c:out value="${applicationStatusList.education}" /></td>
+						<td><c:out value="${applicationStatusList.empreferences}" /></td>
+						<td><c:out value="${applicationStatusList.empresume}" /></td>
+						<td><c:out value="${applicationStatusList.jobhistory}" /></td>
+						<td><c:out value="${applicationStatusList.citizen}" /></td>
+						<td><c:out value="${applicationStatusList.druguser}" /></td>					
+						<td><c:out value="${applicationStatusList.veteran}" /></td>
 						<td>
 						<form action="EditApplicationServlet" method="post">
 							<input type="hidden" name="applicationID"value=<c:out value="${applicationList.applicationID}" />> 
