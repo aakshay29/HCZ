@@ -19,10 +19,10 @@
 					
 						
 					
-					<h1 id="h6.-bootstrap-heading">ThankYou for your application<a class="anchorjs-link" href="#h1.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h1>
+					<h1 id="h6.-bootstrap-heading">We have received your application<a class="anchorjs-link" href="#h1.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h1>
 					<br>
-					<h1 id="h6.-bootstrap-heading">Your Confirmation Number is <c:out value="${Status}" /><a class="anchorjs-link" href="#h1.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h1>
-					<p1>Please use this number to check the status of your application</p1></td>
+					<h1 id="h6.-bootstrap-heading">The status of your application is  <c:out value="${ApplicationStatus}" /><a class="anchorjs-link" href="#h1.-bootstrap-heading"><span class="anchorjs-icon"></span></a></h1>
+					<p1>Wish you all the best on ypur application</p1></td>
 					<br>
 					<br>
 						
