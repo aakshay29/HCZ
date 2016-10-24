@@ -11,13 +11,13 @@
 </head>
 <body>
 	<center>
-		<h1 id="h6.-bootstrap-heading">
+		<h1 id="h3.-bootstrap-heading">
 			Please Enter your confirmation number to check the status of your application<a class="anchorjs-link"
 				href="#h1.-bootstrap-heading"><span class="anchorjs-icon"></span></a>
 		</h1>
 		<br>
 		<form action= "CheckStatusServlet" method="post">
-		<h1 id="h6.-bootstrap-heading">
+		<h1 id="h3.-bootstrap-heading">
 			<input type="text" name="confirmation" id="confirmation"/>
 			<input type ="submit" value="submit"/> 
 			<a class="anchorjs-link" href="#h1.-bootstrap-heading"><span
