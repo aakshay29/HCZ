@@ -118,14 +118,14 @@ public class ApplicationServlet extends HttpServlet {
 		session.setAttribute("applicationId",appid);
 		Hczapplicationstatus stat= new Hczapplicationstatus();
 		stat.setHczapplication(newapp);
-		stat.setAlcoholtest(0);
-		stat.setCodingtest(0);
-		stat.setDottest(0);
-		stat.setEducationdegree(0);
-		stat.setHrinterview(0);
-		stat.setManagerinterview(0);
-		stat.setNationality(0);
-		stat.setStandardpaneltest(0);
+		stat.setAlcoholtest(2);
+		stat.setCodingtest(2);
+		stat.setDottest(2);
+		stat.setEducationdegree(2);
+		stat.setHrinterview(2);
+		stat.setManagerinterview(2);
+		stat.setNationality(2);
+		stat.setStandardpaneltest(2);
 		stat.setStatus("In process");
 		
 		HCZApplicationStatusUtil.insert(stat);
