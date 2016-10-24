@@ -14,9 +14,11 @@ import javax.servlet.http.HttpSession;
 
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
+import Util.HCZApplicationStatusUtil;
 import Util.HCZApplicationUtil;
 import Util.HCZJobUtil;
 import model.Hczapplication;
+import model.Hczapplicationstatus;
 import model.Hczjob;
 
 /**
@@ -107,8 +109,32 @@ public class ApplicationServlet extends HttpServlet {
 			app.setCitizen(0);
 		}
 		
-		HCZApplicationUtil.update(app);
+		HCZApplicationUtil.insert(app);
 		System.out.println("record inserted");
+		int appid= (int) app.getApplicationid();
+		System.out.println("Applictaion id = "+appid);
+		
+		Hczapplication newapp = HCZApplicationUtil.getApplication(appid);
+		session.setAttribute("applicationId",appid);
+		Hczapplicationstatus stat= new Hczapplicationstatus();
+		stat.setHczapplication(newapp);
+		stat.setAlcoholtest(0);
+		stat.setCodingtest(0);
+		stat.setDottest(0);
+		stat.setEducationdegree(0);
+		stat.setHrinterview(0);
+		stat.setManagerinterview(0);
+		stat.setNationality(0);
+		stat.setStandardpaneltest(0);
+		stat.setStatus("In process");
+		
+		HCZApplicationStatusUtil.insert(stat);
+		System.out.println("Record inserted in status table");
+		
+		String nextURL="/applicationConfirmation.jsp";
+		response.sendRedirect(request.getContextPath() + nextURL);	
+		
+		
 	} catch (java.text.ParseException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
