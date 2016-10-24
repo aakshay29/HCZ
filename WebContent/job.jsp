@@ -41,12 +41,6 @@
 						
 					</tr>
 				</c:forEach>
-				<tr>
-				
-				
-				<td></td>
-				
-				<tr>
 			</tbody>
 		</table>
 
