@@ -46,7 +46,7 @@ public class CheckStatusServlet extends HttpServlet {
 		session.setAttribute("ApplicationStatus", chkstatus.getStatus());
 		
 
-		String nextURL="/applicationConfirmation.jsp";
+		String nextURL="/statusconfirmation.jsp";
 		response.sendRedirect(request.getContextPath() + nextURL);	
 	}
 
