@@ -51,7 +51,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.workhistory == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.workhistory == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -62,7 +62,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.educationdegree == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.educationdegree == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -73,7 +73,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.standardpaneltest == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.standardpaneltest == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -84,7 +84,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.dottest == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.dottest == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -95,7 +95,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.alcoholtest == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.alcoholtest == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -106,7 +106,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.veteran == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.veteran == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -117,7 +117,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.hrinterview == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.hrinterview == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -128,7 +128,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.managerinterview == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.managerinterview == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -139,7 +139,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.groupinterview == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.groupinterview == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
@@ -150,7 +150,7 @@
 						</c:choose>
 						<c:choose>
 						  <c:when test="${applicationStatusList.codingtest == 1}">
-						    <td bgcolor="ff4d4d"> <font color="white">Pass</font> </td>
+						    <td bgcolor="00e64d"> <font color="white">Pass</font> </td>
 						  </c:when>
 						  <c:when test="${applicationStatusList.codingtest == 0}">
 						    <td bgcolor="ff4d4d"> <font color="white">Fail</font> </td>
