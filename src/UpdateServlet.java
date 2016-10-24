@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Util.HCZApplicationStatusUtil;
+import Util.HCZApplicationUtil;
+import model.Hczapplication;
 import model.Hczapplicationstatus;
 import model.Hczuser;
 
@@ -41,7 +45,7 @@ public class UpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String nextUrl = "";
-		String status = "";
+		String status = "Processing";
 		
 		long statusID = Long.parseLong(request.getParameter("statusId"));	
 		Hczapplicationstatus applicationStatus = HCZApplicationStatusUtil.getApplicationStatus(statusID);
@@ -105,69 +109,81 @@ public class UpdateServlet extends HttpServlet {
 			}
 			else{
 				applicationStatus.setStandardpaneltest(1);
+			}		
+		}	
+		if(role == 5){
+			String[] statusNationalityString = request.getParameterValues("nationality");
+			if(statusNationalityString == null){
+				applicationStatus.setNationality(0);
 			}
-			if(role == 5){
-				String[] statusNationalityString = request.getParameterValues("nationality");
-				if(statusNationalityString == null){
-					applicationStatus.setNationality(0);
-				}
-				else{
-					applicationStatus.setNationality(1);
-				}
+			else{
+				applicationStatus.setNationality(1);
 			}
-			if(role == 6){
-				long statusAprroval = 0;
-				long statusGroupinterview = 0;
-				long statusSecondinterview = 0;
-				
-				String[] statusSecondString = request.getParameterValues("second");
-				String[] statusOfferString = request.getParameterValues("offer");
-				String[] statusGroupString = request.getParameterValues("group");
-				if(statusSecondString == null){
-					applicationStatus.setManagerinterview(0);
-					statusSecondinterview = 0;
-				}
-				else{
-					applicationStatus.setManagerinterview(1);
-					statusSecondinterview = 1;
-				}
-				if(statusOfferString == null){
-					statusAprroval = 0;
-				}
-				else{
-					statusAprroval = 1;
-				}
-				if(statusGroupString == null){
-					applicationStatus.setGroupinterview(0);
-					statusGroupinterview = 0;
-				}
-				else{
-					applicationStatus.setGroupinterview(1);
-					statusGroupinterview = 1;
-				}
-				
-				if(statusAprroval == 0){
-					status = "We regret to inform you that we are no longer processing your application. Good luck.";
-				}
-				else if(statusAprroval == 1){
-					status = "Congratulations! You have got the job.";
-				}
-				else if(statusGroupinterview == 1){
-					status = "Group interview scheduled";
-				}
-				else if(statusSecondinterview == 1){
-					status = "Second interview scheduled";
-				}
-				else{
-					status = "Processing";
-				}
+		}
+		if(role == 6){
+			long statusAprroval = 2;
+			long statusGroupinterview = 2;
+			long statusSecondinterview = 2;
+			
+			String[] statusSecondString = request.getParameterValues("second");
+			String[] statusOfferString = request.getParameterValues("offer");
+			String[] statusGroupString = request.getParameterValues("group");
+			String[] statusRejectString = request.getParameterValues("reject");
+			String[] statusTestString = request.getParameterValues("test");
+			if(statusSecondString == null){
+				applicationStatus.setManagerinterview(0);
+				statusSecondinterview = 0;
 			}
-		}			
-		
-		applicationStatus.setStatus(status);
-				
+			else{
+				applicationStatus.setManagerinterview(1);
+				statusSecondinterview = 1;
+			}
+			if(statusTestString == null){
+				applicationStatus.setCodingtest(0);
+			}
+			else{
+				applicationStatus.setCodingtest(1);
+			}
+			if(statusRejectString != null){
+				statusAprroval = 0;
+			}
+			if(statusOfferString != null){
+				statusAprroval = 1;
+			}
+			if(statusGroupString == null){
+				applicationStatus.setGroupinterview(0);
+				statusGroupinterview = 0;
+			}
+			else{
+				applicationStatus.setGroupinterview(1);
+				statusGroupinterview = 1;
+			}
+			
+			if(statusAprroval == 0){
+				status = "Application declined";
+			}
+			else if(statusAprroval == 1){
+				status = "Application approved";
+			}
+			else if(statusGroupinterview == 1){
+				status = "Group interview scheduled";
+			}
+			else if(statusSecondinterview == 1){
+				status = "Second interview scheduled";
+			}
+			else{
+				status = "Processing";
+			}
+			applicationStatus.setStatus(status);
+		}
+						
 		HCZApplicationStatusUtil.updateStatus(applicationStatus);
 		session.setAttribute("applicationStatus", applicationStatus);
+		
+		List<Hczapplication> applicationList = HCZApplicationUtil.getApplicationList();
+		List<Hczapplicationstatus> applicationStatusList = HCZApplicationStatusUtil.getApplicationStatusList();
+		session.setAttribute("applicationList", applicationList);
+		session.setAttribute("applicationStatusList", applicationStatusList);
 		
 		nextUrl = "/applicationStatusList.jsp";
 		

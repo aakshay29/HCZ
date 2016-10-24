@@ -52,7 +52,6 @@ public class LoginServlet extends HttpServlet {
 		if(user != null){		
 			List<Hczapplication> applicationList = HCZApplicationUtil.getApplicationList();
 			List<Hczapplicationstatus> applicationStatusList = HCZApplicationStatusUtil.getApplicationStatusList();
-			System.out.println("status: " + applicationStatusList.get(0).getDottest());
 			session.setAttribute("user", user);
 			session.setAttribute("applicationList", applicationList);
 			session.setAttribute("applicationStatusList", applicationStatusList);			

@@ -194,14 +194,18 @@ public class EditServlet extends HttpServlet {
 			if(applicationStatus.getManagerinterview() == 1){
 				secondHtml = "<input type=\"checkbox\" name=\"second\" value=\"second\" checked>Second Interview<br />";
 			}
-			String thirdHtml = "<input type=\"checkbox\" name=\"offer\" value=\"offer\">Hire now<br />";
-			String fourthHtml = "<input type=\"checkbox\" name=\"group\" value=\"group\">Group Interview";
+			String fourthHtml = "<input type=\"checkbox\" name=\"group\" value=\"group\">Group Interview<br />";
 			if(applicationStatus.getGroupinterview() == 1){
-				fourthHtml = "<input type=\"checkbox\" name=\"group\" value=\"group\" checked>Group Interview";
+				fourthHtml = "<input type=\"checkbox\" name=\"group\" value=\"group\" checked>Group Interview<br />";
 			}
+			String fifthHtml = "<input type=\"checkbox\" name=\"test\" value=\"test\">Test<br />";
+			if(applicationStatus.getCodingtest() == 1){
+				fifthHtml = "<input type=\"checkbox\" name=\"test\" value=\"test\" checked>Test<br />";
+			}
+			String sixthHtml = "<input type=\"checkbox\" name=\"reject\" value=\"reject\">Reject<br />";
+			String thirdHtml = "<input type=\"checkbox\" name=\"offer\" value=\"offer\">Hire now";
 			
-			
-			innerHTML += secondHtml + thirdHtml + fourthHtml + "<br/>"+
+			innerHTML += secondHtml + fourthHtml + fifthHtml + sixthHtml + thirdHtml + "<br/>"+
 					"<br />"+
 					"<input type=\"hidden\""+
 					"name=\"action\" value=\"update\"> <input type=\"submit\""+
