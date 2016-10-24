@@ -112,7 +112,7 @@ public class ApplicationServlet extends HttpServlet {
 		HCZApplicationUtil.insert(app);
 		System.out.println("record inserted");
 		int appid= (int) app.getApplicationid();
-		System.out.println("Applictaion id = "+appid);
+		
 		
 		Hczapplication newapp = HCZApplicationUtil.getApplication(appid);
 		session.setAttribute("applicationId",appid);
@@ -130,6 +130,8 @@ public class ApplicationServlet extends HttpServlet {
 		
 		HCZApplicationStatusUtil.insert(stat);
 		System.out.println("Record inserted in status table");
+		long status= stat.getStatusid();
+		session.setAttribute("Status", status);
 		
 		String nextURL="/applicationConfirmation.jsp";
 		response.sendRedirect(request.getContextPath() + nextURL);	
