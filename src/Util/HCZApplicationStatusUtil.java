@@ -7,6 +7,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import UserData.DBUtil;
+import model.Hczapplication;
 import model.Hczapplicationstatus;
 
 public class HCZApplicationStatusUtil {
@@ -51,4 +52,25 @@ public class HCZApplicationStatusUtil {
 			em.close();
 		}
 	}
+	
+	 public static void insert(Hczapplicationstatus app) {
+		    
+		 EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		 EntityTransaction trans = em.getTransaction();
+		 //System.out.println("DbBullhorn: begin transaction");
+		 try {
+		 trans.begin();
+		 em.persist(app);
+		 System.out.println("HCZjob application status: commit transaction");
+		 trans.commit();
+		 } catch (Exception e) {
+		 e.getCause().getMessage();
+		 //System.out.println("DbBullhorn: rollback transaction");
+		 trans.rollback();
+		 } finally {
+		 //System.out.println("DbBullhorn: close em");
+		 em.close();
+		 }
+		 
+	 } 
 }

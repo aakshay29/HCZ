@@ -4,10 +4,10 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import UserData.DBUtil;
-
 import model.Hczapplication;
 
 public class HCZApplicationUtil {
@@ -53,5 +53,28 @@ public class HCZApplicationUtil {
 		 em.close();
 		 }
 		 }
+	 
+	 public static void insert(Hczapplication app) {
+		    
+		 EntityManager em = DBUtil.getEmFactory().createEntityManager();
+		 EntityTransaction trans = em.getTransaction();
+		 //System.out.println("DbBullhorn: begin transaction");
+		 try {
+		 trans.begin();
+		 em.persist(app);
+		 System.out.println("HCZjob applucation: commit transaction");
+		 trans.commit();
+		 } catch (Exception e) {
+		 e.getCause().getMessage();
+		 //System.out.println("DbBullhorn: rollback transaction");
+		 trans.rollback();
+		 } finally {
+		 //System.out.println("DbBullhorn: close em");
+		 em.close();
+		 }
+		 
+	 } 
+	 
+	 
 	 
 }
