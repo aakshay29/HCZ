@@ -40,10 +40,14 @@ public class CheckStatusServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		String statusID = request.getParameter("ConfirmationNumber");
+		String statusID = request.getParameter("confirmation");
 		Hczapplicationstatus chkstatus= HCZApplicationStatusUtil.getApplicationStatus(Long.parseLong(statusID));
 		System.out.println("The status of the application is " + chkstatus.getStatus());
-		session.setAttribute("ApplicationStatus", chkstatus);
+		session.setAttribute("ApplicationStatus", chkstatus.getStatus());
+		
+
+		String nextURL="/applicationConfirmation.jsp";
+		response.sendRedirect(request.getContextPath() + nextURL);	
 	}
 
 }
