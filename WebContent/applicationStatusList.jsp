@@ -11,6 +11,7 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="container">
+		<br/><a href="applicationList.jsp">See Applications</a><br/><br/>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
 				<tr>
@@ -169,7 +170,7 @@
 					</tr>
 				</c:forEach>
 			</tbody>
-		</table>
+		</table>	 
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

@@ -38,6 +38,7 @@ public class CheckStatusServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ENterrr");
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String statusID = request.getParameter("confirmation");
