@@ -122,7 +122,7 @@ $(document).ready(function(){
 					<li><a class="active" href="index.html">Home</a></li>
 					<li><a href="JobServlet">Openings</a></li>
 					<li><a href="statusid.jsp">Check status</a></li>
-					<li><a href="services.html">HR Login</a></li>
+					<li><a href="hrLogin.jsp">HR Login</a></li>
 				  </ul>
 				</div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
