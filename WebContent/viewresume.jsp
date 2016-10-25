@@ -13,69 +13,24 @@
 
   <div class="tab-content">
   				
-							<div class="tab-pane active" id="horizontal-form">
-								<form class="form-horizontal" action="" method="post">
+			
+				
+					<h1 id="h5.-bootstrap-heading"><class="head-top">Resume</h1>
+					<h3> <div class="but_list">
+					   <div class="well">
+					   
+					   		${profile.username} <br>
+							${profile.email} <br>
+							${profile.objective} <br>
+							${profile.usersummary} <br>
+							${profile.education} <br>
+							${profile.experience} <br>
+							${profile.skills} <br>
+							${profile.firstreference}<br>
+							${profile.secondreference}<br>
 							
-									<div class="form-group">
-									<br>
-										<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Name</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="name" value = <%=request.getParameter("name") %> readonly>
-										</div>
-									</div>
-								
-								<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Objective</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="name" value = <%=request.getParameter("objective") %> readonly>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Summary</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="name" value = <%=request.getParameter("summary") %> readonly>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Skills</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="name" value = <%=request.getParameter("skills") %> readonly>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Education</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="name" value = <%=request.getParameter("Degree") %> readonly>
-										</div>
-									</div>
-									
-									
-									<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Work Experience</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="name" value = <%=request.getParameter("experience") %> readonly>
-										</div>
-									</div>
-								
-									<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">reference</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="name" value = <%=request.getParameter("FirstReference") %> readonly>
-										</div>
-									</div>
-									
-									</div>
-										<center>		  
-									
-												</center>
-									</form>
-							</div>
-						</div>	
-					
+					   </div>
+					   </div></h3>
 					
 		</body>
 		</html>

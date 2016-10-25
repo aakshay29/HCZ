@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import Util.HCZEmployeeUtil;
+import model.Hczuserprofile;
 
 /**
  * Servlet implementation class ProfileServlet
@@ -38,6 +42,8 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String skills =request.getParameter("skills");
@@ -49,19 +55,37 @@ public class ProfileServlet extends HttpServlet {
 		String reference =request.getParameter("FirstReference");
 		String secrefer =request.getParameter("SecondRefrence");
 		
-		FileWriter filewriter = new FileWriter("/home/oracle/workspace/HCZ/src/UnitTest/Resume.txt", true);
-		filewriter.write("Name: "+ name + "\n");
-		filewriter.write("Birthday: "+ bday + "\n");
-		filewriter.write("Email: "+ email + "\n");
-		filewriter.write("Skills: "+ skills + "\n");
-		filewriter.write("Summary: "+ summary + "\n");
-		filewriter.write("Objective: "+ objective + "\n");
-		filewriter.write("Degree: "+ education + "\n");
-		filewriter.write("Experience: "+ exp + "\n");
-		filewriter.write("Reference: "+ reference + "\n");
+		Hczuserprofile profile = new Hczuserprofile();
+		profile.setUsername(name);
+		profile.setEmail(email);
+		profile.setObjective(objective);
+		profile.setExperience(summary);
+		profile.setSkills(skills);
+		profile.setEducation(education);
+		profile.setFirstreference(reference);
+		profile.setSecondreference(secrefer);
+		profile.setUsersummary(summary);
+		HCZEmployeeUtil.insert(profile);
+		System.out.println("REcord inserted");
+		session.setAttribute("profile",profile);
 		
-		filewriter.flush();
-		filewriter.close();
-}
+		String nextURL="/profileview.jsp";
+		response.sendRedirect(request.getContextPath() + nextURL);	
+		
+//		FileWriter filewriter = new FileWriter("/home/oracle/workspace/HCZ/src/UnitTest/Resume.txt", true);
+//		filewriter.write("Name: "+ name + "\n");
+//		filewriter.write("Birthday: "+ bday + "\n");
+//		filewriter.write("Email: "+ email + "\n");
+//		filewriter.write("Skills: "+ skills + "\n");
+//		filewriter.write("Summary: "+ summary + "\n");
+//		filewriter.write("Objective: "+ objective + "\n");
+//		filewriter.write("Degree: "+ education + "\n");
+//		filewriter.write("Experience: "+ exp + "\n");
+//		filewriter.write("Reference: "+ reference + "\n");
+//		
+//		filewriter.flush();
+//		filewriter.close();
+//
+		}
 	}
 

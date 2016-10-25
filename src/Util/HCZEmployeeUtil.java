@@ -5,11 +5,12 @@ import javax.persistence.EntityTransaction;
 
 import UserData.DBUtil;
 import model.Hczapplicationstatus;
+import model.Hczuserprofile;
 
 public class HCZEmployeeUtil {
 
 	
-	 public static void insert(Hczapplicationstatus app) {
+	 public static void insert(Hczuserprofile app) {
 	    
 		 EntityManager em = DBUtil.getEmFactory().createEntityManager();
 		 EntityTransaction trans = em.getTransaction();
