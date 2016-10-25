@@ -13,8 +13,10 @@ import javax.servlet.http.HttpSession;
 import Util.HCZApplicationStatusUtil;
 import Util.HCZApplicationUtil;
 import Util.HCZUserUtil;
+import Util.HczInterviewQuestionUtil;
 import model.Hczapplication;
 import model.Hczapplicationstatus;
+import model.Hczinterviewquestion;
 import model.Hczuser;
 
 /**
@@ -50,11 +52,20 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Hczuser user = HCZUserUtil.isValidUser(username, password);
 		if(user != null){		
+			request.getSession().setAttribute("currentApplication", "<a href=\"applicationStatusList.jsp\">Click here to select an application</a>");
 			List<Hczapplication> applicationList = HCZApplicationUtil.getApplicationList();
 			List<Hczapplicationstatus> applicationStatusList = HCZApplicationStatusUtil.getApplicationStatusList();
+			List<Hczinterviewquestion> hrQuestionList = HczInterviewQuestionUtil.getQuestionList(1);
+			List<Hczinterviewquestion> secondInterviewQuestionList = HczInterviewQuestionUtil.getQuestionList(2);
+			List<Hczinterviewquestion> groupInterviewQuestionList = HczInterviewQuestionUtil.getQuestionList(3);
+			List<Hczinterviewquestion> testQuestionList = HczInterviewQuestionUtil.getQuestionList(4);
 			session.setAttribute("user", user);
 			session.setAttribute("applicationList", applicationList);
-			session.setAttribute("applicationStatusList", applicationStatusList);			
+			session.setAttribute("applicationStatusList", applicationStatusList);		
+			session.setAttribute("hrQuestionList", hrQuestionList);
+			session.setAttribute("secondInterviewQuestionList", secondInterviewQuestionList);
+			session.setAttribute("groupInterviewQuestionList", groupInterviewQuestionList);
+			session.setAttribute("testQuestionList", testQuestionList);
 			nextUrl = "/applicationStatusList.jsp";
 		}
 		else{
