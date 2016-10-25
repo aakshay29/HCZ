@@ -22,8 +22,7 @@
 			<br/>
 			<br/>
 			<br/>
-			<form class="form-horizontal" action="asd"
-				method="post">
+			<form class="form-horizontal" action="InputAnswer" method="post">
 				<c:forEach var="hrQuestionList" items="${hrQuestionList}">
 					<div class="form-group">
 						<label for="focusedinput" class="col-sm-2 control-label">${hrQuestionList.question}</label>
