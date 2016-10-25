@@ -198,9 +198,14 @@ public class EditServlet extends HttpServlet {
 			List<Hczinterviewanswer> testAnswerList = HczInterviewQuestionUtil.getAnswerList(4, applicationStatus.getHczapplication().getApplicationid());
 			session.setAttribute("testAnswerList", testAnswerList);
 			
-			innerHTML = "<a href=\"answers.jsp\">View Second Interview Answers</a><br/><br/>"+
-					"<a href=\"answers.jsp\">View Group Interview Answers</a><br/><br/>"+
-					"<a href=\"answers.jsp\">View Test Answers</a><br/><br/>"+
+			innerHTML = "<br/><br/><a href=\"secondInterviewForm.jsp\">Take Second Interview</a><br/><br/>"+
+					"<a href=\"groupInterviewForm.jsp\">Take Group Interview</a><br/><br/>"+
+					"<a href=\"testForm.jsp\">Take Test</a><br/><br/>"+
+					
+					"<a href=\"secondAnswers.jsp\">View Second Interview Answers</a><br/><br/>"+
+					"<a href=\"groupAnswers.jsp\">View Group Interview Answers</a><br/><br/>"+
+					"<a href=\"testAnswers.jsp\">View Test Answers</a><br/><br/>"+
+					
 					"ID: <input type=\"text\" name=\"statusId\""+
 					"value=\""+applicationStatus.getStatusid()+"\"readonly>"+
 					"<br />"+
