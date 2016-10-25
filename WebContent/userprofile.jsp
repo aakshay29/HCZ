@@ -103,7 +103,8 @@
 									
 								
 										<center>		  
-											<input type="submit" value="Export"/>
+											<input type="submit" value="Submit"/>
+											<input type="hidden" name="action" value="Submit"/>
 												</center>
 									</form>
 							</div>

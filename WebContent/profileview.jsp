@@ -87,9 +87,10 @@
 					<input type="hidden" name="action" value="Export">
 					</form>
 					
-					<form action "ProfileServlet" method="post">
+					<form action="ProfileServlet" method="post">
 					<input type ="submit" value="Update">
 					<input type="hidden" name="action" value="Update">
+					<input type= "hidden" name="userid" value="${profile.userid}">
 					</form>
 		</body>
 		</html>

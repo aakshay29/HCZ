@@ -31,7 +31,10 @@
 							
 					   </div>
 					   </div></h3>
-					
+					 <form action ="job.jsp" method="post">
+					<input type ="submit" value="Apply Jobs">
+					<input type ="hidden" name="action" value="${profile.userid}">
+					</form>
 		</body>
 		</html>
 <jsp:include page="footer.jsp"></jsp:include>
