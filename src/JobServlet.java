@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Util.HCZEmployeeUtil;
 import Util.HCZJobUtil;
 import model.Hczjob;
+import model.Hczuserprofile;
 
 /**
  * Servlet implementation class JobServlet
@@ -48,6 +50,11 @@ public class JobServlet extends HttpServlet {
 		List <Hczjob> jobs =HCZJobUtil.getJobs();
 		session.setAttribute("jobs",jobs);
 		
+		String user=request.getParameter("user");
+		Hczuserprofile profile = HCZEmployeeUtil.getprofile(Long.parseLong(user));
+		session.setAttribute("user", profile);
+		
+		System.out.println("The user id is: "+ Long.parseLong(user) );
 		nextURL="/job.jsp";
 		response.sendRedirect(request.getContextPath() + nextURL);	
 		

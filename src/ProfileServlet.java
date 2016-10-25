@@ -45,7 +45,7 @@ public class ProfileServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Hczuserprofile profile = new Hczuserprofile();
 		
-		String action =request.getParameter("name");
+
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
 		String skills =request.getParameter("skills");
@@ -69,34 +69,14 @@ public class ProfileServlet extends HttpServlet {
 		
 		
 		
-		if (action.equalsIgnoreCase("Submit")){
+		
 			HCZEmployeeUtil.insert(profile);
 			System.out.println("REcord inserted");
 			session.setAttribute("profile",profile);
 			
-		}
 		
-		else if (action.equalsIgnoreCase("update")){
-			float id= (float) session.getAttribute("userid");
-			Hczuserprofile newprofile = HCZEmployeeUtil.getprofile(id);
-			
-			profile.setUsername(name);
-			profile.setEmail(email);
-			profile.setObjective(objective);
-			profile.setExperience(summary);
-			profile.setSkills(skills);
-			profile.setEducation(education);
-			profile.setFirstreference(reference);
-			profile.setSecondreference(secrefer);
-			profile.setUsersummary(summary);
-			
-			
-			
-			HCZEmployeeUtil.update(profile);
-			System.out.println("REcord inserted");
-			session.setAttribute("profile",newprofile);
-			
-		}
+		
+	
 		
 		
 		String nextURL="/profileview.jsp";

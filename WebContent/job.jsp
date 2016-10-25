@@ -35,6 +35,7 @@
 						<c:if test="${job.jobstatus == 1}" >
 						<td><h1 id="h6.-bootstrap-heading"><a href="jobapplication.jsp?jobid=${job.jobid}"> Open </a> </h1>
 						<input type="hidden" name="jobid" value="${job.jobid}">
+							<input type="hidden" name="user" value= "${user }" %>>
 						<p1>Click to Apply</p1></td>
 						</c:if>
 							

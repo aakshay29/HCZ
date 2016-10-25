@@ -31,9 +31,10 @@
 							
 					   </div>
 					   </div></h3>
-					 <form action ="job.jsp" method="post">
+					 <form action ="JobServlet" method="post">
 					<input type ="submit" value="Apply Jobs">
-					<input type ="hidden" name="action" value="${profile.userid}">
+					<input type ="hidden" name="completeprofile" value="completeprofile">
+					<input type ="hidden" name="user" value="${profile.userid}">
 					</form>
 		</body>
 		</html>
