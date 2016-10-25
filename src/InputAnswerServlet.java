@@ -65,10 +65,11 @@ public class InputAnswerServlet extends HttpServlet {
 			nextUrl = "/hrAnswers.jsp";
 		}
 		if(action.equalsIgnoreCase("secondInput")){
+			System.out.println("Second");
 			List<Hczinterviewquestion> hrQuestionList = HczInterviewQuestionUtil.getQuestionList(1);
 			for(int i = 0; i <hrQuestionList.size(); i++){
 				long questionID = hrQuestionList.get(i).getInterviewquestionid();
-				String answer = request.getParameter("Answer" + questionID);
+				String answer = request.getParameter("Answer2" + questionID);
 				Hczinterviewanswer interviewAnswer = new Hczinterviewanswer();
 				interviewAnswer.setAnswer(answer);
 				interviewAnswer.setInterviewtype(2);
@@ -78,13 +79,14 @@ public class InputAnswerServlet extends HttpServlet {
 			}
 			List<Hczinterviewanswer> secondAnswerList = HczInterviewQuestionUtil.getAnswerList(2, hczapplication.getApplicationid());
 			session.setAttribute("secondAnswerList", secondAnswerList);
+			System.out.println(secondAnswerList.get(0).getAnswer());
 			nextUrl = "/secondAnswers.jsp";
 		}
 		if(action.equalsIgnoreCase("groupInput")){
 			List<Hczinterviewquestion> hrQuestionList = HczInterviewQuestionUtil.getQuestionList(1);
 			for(int i = 0; i <hrQuestionList.size(); i++){
 				long questionID = hrQuestionList.get(i).getInterviewquestionid();
-				String answer = request.getParameter("Answer" + questionID);
+				String answer = request.getParameter("Answer3" + questionID);
 				Hczinterviewanswer interviewAnswer = new Hczinterviewanswer();
 				interviewAnswer.setAnswer(answer);
 				interviewAnswer.setInterviewtype(1);
@@ -100,7 +102,7 @@ public class InputAnswerServlet extends HttpServlet {
 			List<Hczinterviewquestion> hrQuestionList = HczInterviewQuestionUtil.getQuestionList(1);
 			for(int i = 0; i <hrQuestionList.size(); i++){
 				long questionID = hrQuestionList.get(i).getInterviewquestionid();
-				String answer = request.getParameter("Answer" + questionID);
+				String answer = request.getParameter("Answer4" + questionID);
 				Hczinterviewanswer interviewAnswer = new Hczinterviewanswer();
 				interviewAnswer.setAnswer(answer);
 				interviewAnswer.setInterviewtype(1);
