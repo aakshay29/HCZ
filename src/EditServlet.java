@@ -57,6 +57,7 @@ public class EditServlet extends HttpServlet {
 			applicationStatus = HCZApplicationStatusUtil.getApplicationStatus(statusID);
 		}	
 		session.setAttribute("applicationStatus", applicationStatus);
+		request.getSession().setAttribute("currentApplication", "This interview is set for " + applicationStatus.getHczapplication().getApplicantname() + ".<br/>Application ID: " + applicationStatus.getHczapplication().getApplicationid() + "<br/><a href=\"applicationStatusList.jsp\">Switch to another application here</a><br/>");
 		long role = user.getUserrole();
 		if(role == 1){//HR Manager - HR Interview, 
 			innerHTML = "ID: <input type=\"text\" name=\"statusId\""+
