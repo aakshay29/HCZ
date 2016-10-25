@@ -3,6 +3,8 @@ package UnitTest;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import org.junit.Test;
 
@@ -14,13 +16,19 @@ import org.junit.Test;
 public class Status {
 
 	@Test
-	public void test() {
+	public void test() throws IOException {
 		 
 		 
 		
-		 File file = new File("/home/oracle/workspace/HCZ/src/Resume.txt");
+		 	String name ="Neha";
+		 	String email ="nehajamwal89@gmail.com";
 		 
-		 
+			FileWriter filewriter = new FileWriter("/home/oracle/workspace/HCZ/src/UnitTest/Resume.txt", true);
+			filewriter.write("Name: "+ name + "\n");
+			filewriter.write("Email: "+ email + "\n");
+			
+			filewriter.flush();
+			filewriter.close();
 	}
 
 }

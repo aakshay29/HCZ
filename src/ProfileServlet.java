@@ -1,6 +1,7 @@
 
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -44,11 +45,27 @@ public class ProfileServlet extends HttpServlet {
 		String objective= request.getParameter("objective");
 		String bday= request.getParameter("birthday");
 		String education =request.getParameter("degree");
-		String exp =request.getParameter("workexpereince");
-		String reference =request.getParameter("reference");
+		String exp =request.getParameter("experience");
+		String reference =request.getParameter("FirstReference");
+		String secrefer =request.getParameter("SecondRefrence");
 		
-		File file = new File("/home/oracle/workspace/HCZ/src/Resume.txt");
-      
+		FileWriter filewriter = new FileWriter("/home/oracle/workspace/HCZ/src/UnitTest/Resume.txt", true);
+		filewriter.write("Name: "+ name + "\n");
+		filewriter.write("Birthday: "+ bday + "\n");
+		filewriter.write("Email: "+ email + "\n");
+		filewriter.write("Skills: "+ skills + "\n");
+		filewriter.write("Summary: "+ summary + "\n");
+		filewriter.write("Objective: "+ objective + "\n");
+		filewriter.write("Degree: "+ education + "\n");
+		filewriter.write("Experience: "+ exp + "\n");
+		filewriter.write("Reference: "+ reference + "\n");
+		
+		
+		
+		
+		
+		filewriter.flush();
+		filewriter.close();
+}
 	}
 
-}

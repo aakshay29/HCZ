@@ -1,0 +1,10 @@
+Name: Neha
+Email: nehajamwal89@gmail.comName: Neha JAmwal
+Birthday: 18-03-1989
+Email: nehajamwal89@gmail.com
+Skills: QA, SQL, JAVA, php
+Summary: Quality Assurance Engineer
+Objective: null
+Degree: null
+Experience: Accenture
+Reference: dp@mail.com

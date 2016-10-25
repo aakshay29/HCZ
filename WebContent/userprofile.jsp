@@ -14,7 +14,7 @@
   <div class="tab-content">
   				
 							<div class="tab-pane active" id="horizontal-form">
-								<form class="form-horizontal" action="ProfileServlet" method="post">
+								<form class="form-horizontal" action="viewresume.jsp" method="post">
 							
 									<div class="form-group">
 									<br>
@@ -26,9 +26,22 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="inputPassword" class="col-sm-2 control-label">Email</label>
+										<label for="focusedinput" class="col-sm-2 control-label">Email</label>
 										<div class="col-sm-8">
-											<input type="password" class="form-control1" name="email" placeholder="email">
+											<input type="text" class="form-control1" name="email" placeholder="email">
+										</div>
+									</div>
+										<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Birthday</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="birthday" placeholder="dd-Mon-YYYY">
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Objective</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control1" name="objective" placeholder="objective">
 										</div>
 									</div>
 										<label for="focusedinput" class="col-sm-2 control-label">Summary</label>
@@ -37,21 +50,9 @@
 										</div>
 										
 									</div>
-									<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Skills</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="skills" placeholder="skills">
-										</div>
-									</div>
+									
 									
 										<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Birthday</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="Birthday" placeholder="dd-Mon-YYYY">
-										</div>
-									</div>
-									
-									<div class="form-group">
 										<label class="col-sm-2 control-label">Education</label>
 										<div class="col-sm-8">
 											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="Phd"> Phd/Doctorate</label></div>
@@ -60,11 +61,21 @@
 											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="Bachelor's"> Bachelors</label></div>
 										</div>
 									</div>
+									
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Skills</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="skills" placeholder="skills">
+										</div>
+									</div>
+									
+									
+									
+								
 
 									
 								
-									
-									
+							
 									<div class="form-group">
 										<label for="txtarea1" class="col-sm-2 control-label">Work Experience</label>
 										<div class="col-sm-8"><textarea name="experience" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
@@ -92,7 +103,7 @@
 									
 								
 										<center>		  
-											<input type="submit" value="Update Profile"/>
+											<input type="submit" value="Export"/>
 												</center>
 									</form>
 							</div>
