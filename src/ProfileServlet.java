@@ -60,10 +60,6 @@ public class ProfileServlet extends HttpServlet {
 		filewriter.write("Experience: "+ exp + "\n");
 		filewriter.write("Reference: "+ reference + "\n");
 		
-		
-		
-		
-		
 		filewriter.flush();
 		filewriter.close();
 }
