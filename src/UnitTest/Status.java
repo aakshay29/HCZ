@@ -2,12 +2,14 @@ package UnitTest;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+
 import org.junit.Test;
 
-import Util.HCZApplicationUtil;
-import Util.HCZJobUtil;
-import model.Hczapplication;
-import model.Hczjob;
+
+
+
+
 
 public class Status {
 
@@ -15,9 +17,8 @@ public class Status {
 	public void test() {
 		 
 		 
-		 float jobid=109;
-		 String name ="Dave";
-
+		
+		 File file = new File("/home/oracle/workspace/HCZ/src/Resume.txt");
 		 
 		 
 	}
