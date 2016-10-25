@@ -54,6 +54,8 @@ public class HczInterviewQuestionUtil {
 		}
 	}
 	public static List<Hczinterviewanswer> getAnswerList(int interviewType, long applicationID) {
+		System.out.println("Enter");
+		System.out.println();
 		EntityManager em = DBUtil.getEmFactory().createEntityManager();	
 		TypedQuery<Hczinterviewanswer> query = em.createQuery("SELECT a FROM Hczinterviewanswer a where a.hczapplication.applicationid = :applicationID and a.interviewtype = :interviewType", Hczinterviewanswer.class);
 		query.setParameter("applicationID", applicationID);
@@ -66,6 +68,7 @@ public class HczInterviewQuestionUtil {
 		} finally {
 			em.close();
 		}
+		System.out.println("Exit");
 		return answerList;
 	}
 }

@@ -96,7 +96,7 @@ public class InputAnswerServlet extends HttpServlet {
 			session.setAttribute("groupAnswerList", groupAnswerList);
 			nextUrl = "/groupAnswers.jsp";
 		}
-		if(action.equalsIgnoreCase("testInput")){
+		if(action.equalsIgnoreCase("testInput")){		
 			List<Hczinterviewquestion> hrQuestionList = HczInterviewQuestionUtil.getQuestionList(4);
 			for(int i = 0; i <hrQuestionList.size(); i++){
 				long questionID = hrQuestionList.get(i).getInterviewquestionid();
