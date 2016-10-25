@@ -49,6 +49,10 @@ public class Hczapplication implements Serializable {
 	@OneToMany(mappedBy="hczapplication")
 	private List<Hczapplicationstatus> hczapplicationstatuses;
 
+	//bi-directional many-to-one association to Hczinterviewanswer
+	@OneToMany(mappedBy="hczapplication")
+	private List<Hczinterviewanswer> hczinterviewanswers;
+
 	public Hczapplication() {
 	}
 
@@ -168,6 +172,28 @@ public class Hczapplication implements Serializable {
 		hczapplicationstatus.setHczapplication(null);
 
 		return hczapplicationstatus;
+	}
+
+	public List<Hczinterviewanswer> getHczinterviewanswers() {
+		return this.hczinterviewanswers;
+	}
+
+	public void setHczinterviewanswers(List<Hczinterviewanswer> hczinterviewanswers) {
+		this.hczinterviewanswers = hczinterviewanswers;
+	}
+
+	public Hczinterviewanswer addHczinterviewanswer(Hczinterviewanswer hczinterviewanswer) {
+		getHczinterviewanswers().add(hczinterviewanswer);
+		hczinterviewanswer.setHczapplication(this);
+
+		return hczinterviewanswer;
+	}
+
+	public Hczinterviewanswer removeHczinterviewanswer(Hczinterviewanswer hczinterviewanswer) {
+		getHczinterviewanswers().remove(hczinterviewanswer);
+		hczinterviewanswer.setHczapplication(null);
+
+		return hczinterviewanswer;
 	}
 
 }
