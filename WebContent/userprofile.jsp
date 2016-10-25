@@ -14,7 +14,7 @@
   <div class="tab-content">
   				
 							<div class="tab-pane active" id="horizontal-form">
-								<form class="form-horizontal" action="viewresume.jsp" method="post">
+								<form class="form-horizontal" action="ProfileServlet" method="post">
 							
 									<div class="form-group">
 									<br>
@@ -103,7 +103,8 @@
 									
 								
 										<center>		  
-											<input type="submit" value="Export"/>
+											<input type="submit" value="Submit"/>
+											<input type="hidden" name="action" value="Submit"/>
 												</center>
 									</form>
 							</div>
