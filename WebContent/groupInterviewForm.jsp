@@ -28,7 +28,7 @@
 						<label for="focusedinput" class="col-sm-2 control-label">${groupInterviewQuestionList.question}</label>
 						<div class="col-sm-6">
 							<textarea class="form-control1"
-								name="Answer${groupInterviewQuestionList.interviewquestionid}"> </textarea>
+								name="Answer${groupInterviewQuestionList.interviewquestionid}"></textarea>
 						</div>
 					</div>
 				</c:forEach>
