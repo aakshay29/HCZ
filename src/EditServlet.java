@@ -1,6 +1,8 @@
 
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +12,10 @@ import javax.servlet.http.HttpSession;
 
 import Util.HCZApplicationStatusUtil;
 import Util.HCZApplicationUtil;
+import Util.HczInterviewQuestionUtil;
 import model.Hczapplication;
 import model.Hczapplicationstatus;
+import model.Hczinterviewanswer;
 import model.Hczuser;
 
 /**
@@ -60,7 +64,11 @@ public class EditServlet extends HttpServlet {
 		request.getSession().setAttribute("currentApplication", "This interview is set for " + applicationStatus.getHczapplication().getApplicantname() + ".<br/>Application ID: " + applicationStatus.getHczapplication().getApplicationid() + "<br/><a href=\"applicationStatusList.jsp\">Switch to another application here</a><br/>");
 		long role = user.getUserrole();
 		if(role == 1){//HR Manager - HR Interview, 
-			innerHTML = "ID: <input type=\"text\" name=\"statusId\""+
+			List<Hczinterviewanswer> hrAnswerList = HczInterviewQuestionUtil.getAnswerList(1, applicationStatus.getHczapplication().getApplicationid());
+			session.setAttribute("hrAnswerList", hrAnswerList);
+			innerHTML = "<br/><br/><a href=\"hrInterviewForm.jsp\">Take HR Interview</a><br/><br/>"+
+					"<a href=\"hrAnswers.jsp\">View HR Interview Answers</a><br/><br/>"+
+					"ID: <input type=\"text\" name=\"statusId\""+
 					"value=\""+applicationStatus.getStatusid()+"\"readonly>"+
 					"<br />"+
 					"<br />Name: <input type=\"text\" name=\"statusName\""+
@@ -183,7 +191,17 @@ public class EditServlet extends HttpServlet {
 			nextUrl = "/editApplication.jsp";
 		}
 		if(role == 6){//Hiring Manager - Second Interview
-			innerHTML = "ID: <input type=\"text\" name=\"statusId\""+
+			List<Hczinterviewanswer> secondAnswerList = HczInterviewQuestionUtil.getAnswerList(2, applicationStatus.getHczapplication().getApplicationid());
+			session.setAttribute("secondAnswerList", secondAnswerList);
+			List<Hczinterviewanswer> groupAnswerList = HczInterviewQuestionUtil.getAnswerList(3, applicationStatus.getHczapplication().getApplicationid());
+			session.setAttribute("groupAnswerList", groupAnswerList);
+			List<Hczinterviewanswer> testAnswerList = HczInterviewQuestionUtil.getAnswerList(4, applicationStatus.getHczapplication().getApplicationid());
+			session.setAttribute("testAnswerList", testAnswerList);
+			
+			innerHTML = "<a href=\"answers.jsp\">View Second Interview Answers</a><br/><br/>"+
+					"<a href=\"answers.jsp\">View Group Interview Answers</a><br/><br/>"+
+					"<a href=\"answers.jsp\">View Test Answers</a><br/><br/>"+
+					"ID: <input type=\"text\" name=\"statusId\""+
 					"value=\""+applicationStatus.getStatusid()+"\"readonly>"+
 					"<br />"+
 					"<br />Name: <input type=\"text\" name=\"statusName\""+

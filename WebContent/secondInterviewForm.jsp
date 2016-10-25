@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>HR Interview Form</title>
+<title>Second Interview Form</title>
 </head>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
@@ -23,17 +23,17 @@
 			<br/>
 			<br/>
 			<form class="form-horizontal" action="InputAnswerServlet" method="post">
-				<c:forEach var="hrQuestionList" items="${hrQuestionList}">
+				<c:forEach var="secondInterviewQuestionList" items="${secondInterviewQuestionList}">
 					<div class="form-group">
-						<label for="focusedinput" class="col-sm-2 control-label">${hrQuestionList.question}</label>
+						<label for="focusedinput" class="col-sm-2 control-label">${secondInterviewQuestionList.question}</label>
 						<div class="col-sm-6">
 							<textarea class="form-control1"
-								name="Answer${hrQuestionList.interviewquestionid}"> </textarea>
+								name="Answer${secondInterviewQuestionList.interviewquestionid}"> </textarea>
 						</div>
 					</div>
 				</c:forEach>
 				<center>
-					<input type="hidden" name="action" value="hrInput"> 
+					<input type="hidden" name="action" value="secondInput"> 
 					<input type="submit" value="Submit" />
 				</center>
 			</form>
