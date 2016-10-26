@@ -1,7 +1,5 @@
 
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,7 +31,7 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		File file = new File("/home/oracle/workspace/HCZ/src/Resume.txt");
+		//File file = new File("/home/oracle/workspace/HCZ/src/Resume.txt");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -53,7 +51,7 @@ public class ProfileServlet extends HttpServlet {
 		String objective= request.getParameter("objective");
 		String address= request.getParameter("address");
 		String education =request.getParameter("degree");
-		String exp =request.getParameter("experience");
+		//String exp =request.getParameter("experience");
 		String reference =request.getParameter("FirstReference");
 		String secrefer =request.getParameter("SecondRefrence");
 		

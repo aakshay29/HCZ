@@ -1,9 +1,5 @@
 package UnitTest;
 
-import static org.junit.Assert.*;
-
-import javax.servlet.http.HttpSession;
-
 import org.junit.Test;
 
 import Util.HCZApplicationStatusUtil;

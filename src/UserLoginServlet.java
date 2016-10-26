@@ -10,8 +10,6 @@ import javax.servlet.http.HttpSession;
 
 import UserData.DBUtil;
 import Util.HCZEmployeeUtil;
-import Util.HCZUserUtil;
-import model.Hczuser;
 import model.Hczuserprofile;
 
 /**
@@ -54,10 +52,7 @@ public class UserLoginServlet extends HttpServlet {
 		
 		if(user != null){
 			session.setAttribute("profile", user);
-			String email= user.getEmail();
-		
-			
-			
+			//String email= user.getEmail();				
 		}
 		
 		nextUrl = "/profileview.jsp";
