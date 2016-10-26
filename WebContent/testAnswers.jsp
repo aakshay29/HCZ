@@ -23,7 +23,7 @@
 			<br/>
 			<br/>
 			<form class="form-horizontal" action="InputAnswer" method="post">
-				<c:forEach var="groupAnswerList" items="${testAnswerList}">
+				<c:forEach var="testAnswerList" items="${testAnswerList}">
 					<div class="form-group">
 						<label for="focusedinput" class="col-sm-2 control-label">${testAnswerList.hczinterviewquestion.question}</label>
 						<label for="focusedinput" class="col-sm-2 control-label">${testAnswerList.answer}</label><br/>
@@ -33,7 +33,6 @@
 			<br/>
 		</div>
 	</div>
-
 
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
