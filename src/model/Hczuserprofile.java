@@ -17,6 +17,8 @@ public class Hczuserprofile implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long userid;
 
+	private String address;
+
 	private String education;
 
 	private String email;
@@ -44,6 +46,14 @@ public class Hczuserprofile implements Serializable {
 
 	public void setUserid(long userid) {
 		this.userid = userid;
+	}
+
+	public String getAddress() {
+		return this.address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getEducation() {

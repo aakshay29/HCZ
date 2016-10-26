@@ -51,7 +51,7 @@ public class ProfileServlet extends HttpServlet {
 		String skills =request.getParameter("skills");
 		String summary = request.getParameter("summary");
 		String objective= request.getParameter("objective");
-		String bday= request.getParameter("birthday");
+		String address= request.getParameter("address");
 		String education =request.getParameter("degree");
 		String exp =request.getParameter("experience");
 		String reference =request.getParameter("FirstReference");
@@ -66,6 +66,7 @@ public class ProfileServlet extends HttpServlet {
 		profile.setFirstreference(reference);
 		profile.setSecondreference(secrefer);
 		profile.setUsersummary(summary);
+		profile.setAddress(address);
 		
 		
 		

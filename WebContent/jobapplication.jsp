@@ -25,18 +25,67 @@
 										</div>
 									</div>
 									
+									<c:if test="${user.userid != null}">
+									
+										
 									
 										<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">userid</label>
+										<label for="focusedinput" class="col-sm-2 control-label">Name</label>
 										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="user" value = "${user.userid}" >
+											<input type="text" type="text" class="form-control1" name="Nameinput" value = "${user.username}" >
 										</div>
 									</div>
 									
 									
+										<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">email</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="Emailinput" value = "${user.email}" >
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Address</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="Addressinput" value="${user.address}" >
+										</div>
+									</div>
+										<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Skills</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="skills" value = "${user.skills}" >
+										</div>
+									</div>
+									
+										<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Summary</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="summary" value = "${user.usersummary}" >
+										</div>
+									</div>
+									
+										<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Education</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="Degree" value = "${user.education}" >
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Experience</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="experience" value = "${user.experience}" >
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Please fill out the mandatory fields below:</label>
+									</div>
+									</c:if>
 									
 									
-						
+									
+								<c:if test ="${user.userid == null}">
 									
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Email</label>
@@ -45,12 +94,7 @@
 										</div>
 									</div>
 									
-									<div class="form-group">
-										<label for="inputPassword" class="col-sm-2 control-label">Create a Password</label>
-										<div class="col-sm-8">
-											<input type="password" class="form-control1" name="inputPassword" placeholder="Password">
-										</div>
-									</div>
+									
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Your Name</label>
 										<div class="col-sm-8">
@@ -66,12 +110,7 @@
 										</div>
 									</div>
 									
-										<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Birthday</label>
-										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="Birthday" placeholder="dd-Mon-YYYY">
-										</div>
-									</div>
+									
 									
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Education</label>
@@ -93,7 +132,14 @@
 									</div>
 									
 									<div class="form-group">
-										<label for="txtarea1" class="col-sm-2 control-label">Roles and Responsibilities</label>
+										<label for="focusedinput" class="col-sm-2 control-label">skills</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="skills" placeholder="SQL,JAVA">
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label for="txtarea1" class="col-sm-2 control-label">Experience</label>
 										<div class="col-sm-8"><textarea name="experience" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
 									</div>
 									
@@ -109,7 +155,14 @@
 											<input type="text" type="text" class="form-control1" id="SecondRefrence" placeholder="Email">
 										</div>
 									</div>
+								</c:if>
 									
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Birthday</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="Birthday" placeholder="dd-Mon-YYYY">
+										</div>
+									</div>
 									
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Veteran</label>

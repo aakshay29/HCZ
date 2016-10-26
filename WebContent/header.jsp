@@ -120,6 +120,7 @@ $(document).ready(function(){
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav">
 					<li><a class="active" href="index.html">Home</a></li>
+					<li><a href="userLogin.jsp">Applicant's Login</a></li>
 					<li><a href="JobServlet">Openings</a></li>
 					<li><a href="statusid.jsp">Check status</a></li>
 					<li><a href="hrLogin.jsp">HR Login</a></li>

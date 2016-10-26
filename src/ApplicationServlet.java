@@ -54,17 +54,16 @@ public class ApplicationServlet extends HttpServlet {
 	HttpSession session = request.getSession();
 		
 	String jobid= request.getParameter("jobid");
-	System.out.println("Job id is "+ jobid);
+	
 	String name=request.getParameter("Nameinput");
-	System.out.println("Input name is " +name);
 	String address=request.getParameter("Addressinput");
 	String email=request.getParameter("Emailinput");
-	String password=request.getParameter("inputPassword");
 	String jobhistory =request.getParameter("experience"); 
 	String degree =request.getParameter("Degree");
-	System.out.println("deg name is " +degree);
+	String skills =request.getParameter("skills");
 	String firstreference =request.getParameter("FirstReference");
 	String secondreference =request.getParameter("SecondRefrence");
+	
 	String veteran =request.getParameter("VetStatus");
 	String citizen =request.getParameter("Citizen");
 	String DrugAddict =request.getParameter("DrugAddictions");
@@ -87,7 +86,7 @@ public class ApplicationServlet extends HttpServlet {
 		app.setEducation(degree);
 		app.setBirthday(sqlDate);
 		app.setHczjob(hczjob);
-	
+		app.setSkills(skills);
 		if(veteran.equalsIgnoreCase("yes")) {
 			app.setVeteran(1);
 		}

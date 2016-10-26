@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -34,9 +35,9 @@ public class Hczapplication implements Serializable {
 
 	private String empreferences;
 
-	private String empresume;
-
 	private String jobhistory;
+
+	private String skills;
 
 	private long veteran;
 
@@ -120,20 +121,20 @@ public class Hczapplication implements Serializable {
 		this.empreferences = empreferences;
 	}
 
-	public String getEmpresume() {
-		return this.empresume;
-	}
-
-	public void setEmpresume(String empresume) {
-		this.empresume = empresume;
-	}
-
 	public String getJobhistory() {
 		return this.jobhistory;
 	}
 
 	public void setJobhistory(String jobhistory) {
 		this.jobhistory = jobhistory;
+	}
+
+	public String getSkills() {
+		return this.skills;
+	}
+
+	public void setSkills(String skills) {
+		this.skills = skills;
 	}
 
 	public long getVeteran() {

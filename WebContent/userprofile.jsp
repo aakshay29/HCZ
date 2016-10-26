@@ -32,9 +32,9 @@
 										</div>
 									</div>
 										<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Birthday</label>
+										<label for="focusedinput" class="col-sm-2 control-label">Address</label>
 										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="birthday" placeholder="dd-Mon-YYYY">
+											<input type="text" type="text" class="form-control1" name="address" placeholder="Address">
 										</div>
 									</div>
 									
@@ -55,10 +55,10 @@
 										<div class="form-group">
 										<label class="col-sm-2 control-label">Education</label>
 										<div class="col-sm-8">
-											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="Phd"> Phd/Doctorate</label></div>
-											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="MBA"> MBA</label></div>
-											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="Master"> Masters/M.s</label></div>
-											<div class="checkbox-inline1"><label><input type="checkbox" name="Degree" value="Bachelor's"> Bachelors</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="degree" value="Phd"> Phd/Doctorate</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="degree" value="MBA"> MBA</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="degree" value="Master"> Masters/M.s</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="degree" value="Bachelor's"> Bachelors</label></div>
 										</div>
 									</div>
 									
@@ -69,12 +69,6 @@
 										</div>
 									</div>
 									
-									
-									
-								
-
-									
-								
 							
 									<div class="form-group">
 										<label for="txtarea1" class="col-sm-2 control-label">Work Experience</label>

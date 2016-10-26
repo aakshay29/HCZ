@@ -45,16 +45,20 @@ public class JobServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		HttpSession session = request.getSession();
+	
+		
 		String nextURL=null;
 		
 		List <Hczjob> jobs =HCZJobUtil.getJobs();
 		session.setAttribute("jobs",jobs);
 		
+		if(request.getParameter("user") != null) {
+		System.out.println("i am here");
 		String user=request.getParameter("user");
 		Hczuserprofile profile = HCZEmployeeUtil.getprofile(Long.parseLong(user));
 		session.setAttribute("user", profile);
+		}
 		
-		System.out.println("The user id is: "+ Long.parseLong(user) );
 		nextURL="/job.jsp";
 		response.sendRedirect(request.getContextPath() + nextURL);	
 		
