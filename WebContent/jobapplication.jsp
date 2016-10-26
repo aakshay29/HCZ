@@ -16,32 +16,49 @@
 							<div class="tab-pane active" id="horizontal-form">
 								<form class="form-horizontal" action="ApplicationServlet" method="post">
 							
-									<div class="form-group">
-									<br>
+							
+								
 										<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Job ID</label>
 										<div class="col-sm-8">
 											<input type="text" type="text" class="form-control1" name="jobid" value = <%=request.getParameter("jobid") %> readonly>
 										</div>
 									</div>
+									
+									
+										<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">userid</label>
+										<div class="col-sm-8">
+											<input type="text" type="text" class="form-control1" name="user" value = "${user.userid}" >
+										</div>
+									</div>
+									
+									
+									
+									
+						
+									
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Email</label>
 										<div class="col-sm-8">
 											<input type="text" type="text" class="form-control1" name="Emailinput" placeholder="Email">
 										</div>
 									</div>
+									
 									<div class="form-group">
 										<label for="inputPassword" class="col-sm-2 control-label">Create a Password</label>
 										<div class="col-sm-8">
 											<input type="password" class="form-control1" name="inputPassword" placeholder="Password">
 										</div>
 									</div>
+									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Your Name</label>
 										<div class="col-sm-8">
 											<input type="text" class="form-control1" name="Nameinput" placeholder="Enter Name">
 										</div>
 										
 									</div>
+									
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Address</label>
 										<div class="col-sm-8">
@@ -75,9 +92,6 @@
 										</div>
 									</div>
 									
-								
-									
-									
 									<div class="form-group">
 										<label for="txtarea1" class="col-sm-2 control-label">Roles and Responsibilities</label>
 										<div class="col-sm-8"><textarea name="experience" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
@@ -95,6 +109,7 @@
 											<input type="text" type="text" class="form-control1" id="SecondRefrence" placeholder="Email">
 										</div>
 									</div>
+									
 									
 									<div class="form-group">
 										<label class="col-sm-2 control-label">Veteran</label>
@@ -127,7 +142,9 @@
 									</form>
 							</div>
 						</div>	
+				
 					
+				
 					
 		</body>
 		</html>
