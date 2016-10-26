@@ -31,6 +31,18 @@
 						</div>
 					</div>
 				</form>
+			
+			
+			<div class="tab-content">
+			<div class="tab-pane active" id="horizontal-form">
+				<form class="form-horizontal" action="userprofile.jsp" method="post">
+					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label">Dont have an account?</label>
+						<div class="col-sm-4">
+							<input type="submit"  value="Sign Up">
+						</div>
+					</div>
+			</form>
 			</div>
 		</div>
 	</div>

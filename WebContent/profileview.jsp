@@ -18,8 +18,10 @@
 							
 									<div class="form-group">
 									<br>
+									
+ 											
 										<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">Name</label>
+										<label for="focusedinput" class="col-sm-2 control-label">Name</label><img alt="${user.username}" src="${gravatarURL}"/>
 										<div class="col-sm-8">
 											<input type="text" type="text" class="form-control1" name="name" value="${profile.username}" >
 										</div>
@@ -84,14 +86,14 @@
 						</div>	
 					<form action="viewresume.jsp" method="post">
 					<input type ="submit" value="Export">
-					<input type="hidden" name="action" value="Export">
+					<input type="hidden" name="action" value="ExportResume">
 					</form>
 					
-					<form action="ProfileServlet" method="post">
-					<input type ="submit" value="Update">
+					<!--  <form action="ProfileServlet" method="post">
+					
 					<input type="hidden" name="action" value="Update">
 					<input type= "hidden" name="userid" value="${profile.userid}">
-					</form>
+					</form> -->
 		</body>
 		</html>
 <jsp:include page="footer.jsp"></jsp:include>

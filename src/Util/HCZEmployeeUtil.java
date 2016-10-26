@@ -73,7 +73,7 @@ public class HCZEmployeeUtil {
 		}
 	 public static Hczuserprofile isValidUser(String username, String password) {
 			EntityManager em = DBUtil.getEmFactory().createEntityManager();
-			String qString = "Select u from Hczuserprofile u where u.username = :username and u.userpassword = :password";
+			String qString = "Select u from Hczuserprofile u where u.username = :username and u.password = :password";
 			TypedQuery<Hczuserprofile> q = em.createQuery(qString, Hczuserprofile.class);
 			q.setParameter("username", username);
 			q.setParameter("password", password);
