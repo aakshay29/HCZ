@@ -6,9 +6,6 @@ import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
 import UserData.DBUtil;
-import model.Hczapplicationstatus;
-import model.Hczjob;
-import model.Hczuser;
 import model.Hczuserprofile;
 
 public class HCZEmployeeUtil {

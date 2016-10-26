@@ -7,7 +7,6 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import UserData.DBUtil;
-import model.Hczapplication;
 import model.Hczapplicationstatus;
 
 public class HCZApplicationStatusUtil {

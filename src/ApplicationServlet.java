@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
-
 import Util.HCZApplicationStatusUtil;
 import Util.HCZApplicationUtil;
 import Util.HCZJobUtil;
@@ -57,13 +55,12 @@ public class ApplicationServlet extends HttpServlet {
 	
 	String name=request.getParameter("Nameinput");
 	String address=request.getParameter("Addressinput");
-	String email=request.getParameter("Emailinput");
 	String jobhistory =request.getParameter("experience"); 
 	String degree =request.getParameter("Degree");
 	String skills =request.getParameter("skills");
 	String firstreference =request.getParameter("FirstReference");
 	String secondreference =request.getParameter("SecondRefrence");
-	
+
 	String veteran =request.getParameter("VetStatus");
 	String citizen =request.getParameter("Citizen");
 	String DrugAddict =request.getParameter("DrugAddictions");
@@ -82,7 +79,7 @@ public class ApplicationServlet extends HttpServlet {
 		app.setApplicantname(name);
 		app.setAddress(address);
 		app.setJobhistory(jobhistory);
-		app.setEmpreferences(firstreference);
+		app.setEmpreferences(firstreference + "," + secondreference);
 		app.setEducation(degree);
 		app.setBirthday(sqlDate);
 		app.setHczjob(hczjob);
@@ -120,6 +117,9 @@ public class ApplicationServlet extends HttpServlet {
 		stat.setAlcoholtest(2);
 		stat.setCodingtest(2);
 		stat.setDottest(2);
+		stat.setVeteran(2);
+		stat.setGroupinterview(2);
+		stat.setWorkhistory(2);
 		stat.setEducationdegree(2);
 		stat.setHrinterview(2);
 		stat.setManagerinterview(2);

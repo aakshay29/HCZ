@@ -132,7 +132,7 @@
 									</div>
 									
 									<div class="form-group">
-										<label for="focusedinput" class="col-sm-2 control-label">skills</label>
+										<label for="focusedinput" class="col-sm-2 control-label">Skills</label>
 										<div class="col-sm-8">
 											<input type="text" type="text" class="form-control1" name="skills" placeholder="SQL,JAVA">
 										</div>

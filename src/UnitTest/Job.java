@@ -1,20 +1,12 @@
 package UnitTest;
 
-import static org.junit.Assert.*;
-
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
 import org.junit.Test;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
-
 import Util.HCZApplicationUtil;
-import Util.HCZJobUtil;
 import model.Hczapplication;
-import model.Hczjob;
 
 public class Job {
 
