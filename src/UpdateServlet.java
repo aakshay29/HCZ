@@ -3,6 +3,7 @@
 import java.io.IOException;
 import java.util.List;
 
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import Util.HCZApplicationStatusUtil;
 import Util.HCZApplicationUtil;
+import Mail.SendMail;
 import model.Hczapplication;
 import model.Hczapplicationstatus;
 import model.Hczuser;
@@ -161,9 +163,21 @@ public class UpdateServlet extends HttpServlet {
 			
 			if(statusAprroval == 0){
 				status = "Application declined";
+				try {
+					SendMail.sendMail("aakshay@gmail.com","aakshay@gmail.com","Application Status at IPS","Thank you for applying at IPS. You didn not get the job. Bye.",false);
+				} catch (MessagingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			else if(statusAprroval == 1){
 				status = "Application approved";
+				try {
+					SendMail.sendMail("aakshay@gmail.com","aakshay@gmail.com","Application Status at IPS","Congratulations! You got the job. See you monday.",false);
+				} catch (MessagingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			else if(statusGroupinterview == 1){
 				status = "Group interview scheduled";
