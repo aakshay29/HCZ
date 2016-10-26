@@ -25,6 +25,7 @@
 			<form class="form-horizontal" action="InputAnswer" method="post">
 				<c:forEach var="hrAnswerList" items="${hrAnswerList}">
 					<div class="form-group">
+						<label for="focusedinput" class="col-sm-2 control-label"></label>
 						<label for="focusedinput" class="col-sm-2 control-label">${hrAnswerList.hczinterviewquestion.question}</label>
 						<label for="focusedinput" class="col-sm-2 control-label">${hrAnswerList.answer}</label><br/>
 					</div>
