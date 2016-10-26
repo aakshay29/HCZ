@@ -132,34 +132,34 @@ public class UpdateServlet extends HttpServlet {
 			String[] statusGroupString = request.getParameterValues("group");
 			String[] statusRejectString = request.getParameterValues("reject");
 			String[] statusTestString = request.getParameterValues("test");
-			if(statusSecondString == null){
-				applicationStatus.setManagerinterview(0);
-				statusSecondinterview = 0;
-			}
-			else{
+			if(statusSecondString != null){
 				applicationStatus.setManagerinterview(1);
 				statusSecondinterview = 1;
 			}
-			if(statusTestString == null){
-				applicationStatus.setCodingtest(0);
-			}
-			else{
+//			else{
+//				applicationStatus.setManagerinterview(1);
+//				statusSecondinterview = 1;
+//			}
+			if(statusTestString != null){
 				applicationStatus.setCodingtest(1);
 			}
+//			else{
+//				applicationStatus.setCodingtest(1);
+//			}
 			if(statusRejectString != null){
 				statusAprroval = 0;
 			}
 			if(statusOfferString != null){
 				statusAprroval = 1;
 			}
-			if(statusGroupString == null){
-				applicationStatus.setGroupinterview(0);
-				statusGroupinterview = 0;
-			}
-			else{
+			if(statusGroupString != null){
 				applicationStatus.setGroupinterview(1);
 				statusGroupinterview = 1;
 			}
+//			else{
+//				applicationStatus.setGroupinterview(1);
+//				statusGroupinterview = 1;
+//			}
 			
 			if(statusAprroval == 0){
 				status = "Application declined";
