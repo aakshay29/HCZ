@@ -31,6 +31,12 @@
 											<input type="text" class="form-control1" name="email" placeholder="email">
 										</div>
 									</div>
+									<div class="form-group">
+										<label for="focusedinput" class="col-sm-2 control-label">Password</label>
+										<div class="col-sm-8">
+											<input type="password" class="form-control1" name="email" placeholder="password">
+										</div>
+									</div>
 										<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Address</label>
 										<div class="col-sm-8">

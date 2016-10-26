@@ -56,6 +56,7 @@ public class ProfileServlet extends HttpServlet {
 		String exp =request.getParameter("experience");
 		String reference =request.getParameter("FirstReference");
 		String secrefer =request.getParameter("SecondRefrence");
+		String password =request.getParameter("password");
 		
 		profile.setUsername(name);
 		profile.setEmail(email);
@@ -67,6 +68,7 @@ public class ProfileServlet extends HttpServlet {
 		profile.setSecondreference(secrefer);
 		profile.setUsersummary(summary);
 		profile.setAddress(address);
+		profile.setPassword(password);
 		
 		
 		
