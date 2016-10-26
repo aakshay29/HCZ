@@ -29,6 +29,8 @@ public class Hczuserprofile implements Serializable {
 
 	private String objective;
 
+	private String password;
+
 	private String secondreference;
 
 	private String skills;
@@ -94,6 +96,14 @@ public class Hczuserprofile implements Serializable {
 
 	public void setObjective(String objective) {
 		this.objective = objective;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getSecondreference() {

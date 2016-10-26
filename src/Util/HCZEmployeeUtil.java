@@ -8,6 +8,7 @@ import javax.persistence.TypedQuery;
 import UserData.DBUtil;
 import model.Hczapplicationstatus;
 import model.Hczjob;
+import model.Hczuser;
 import model.Hczuserprofile;
 
 public class HCZEmployeeUtil {
@@ -69,5 +70,20 @@ public class HCZEmployeeUtil {
 			}
 			return user;
 			
+		}
+	 public static Hczuserprofile isValidUser(String username, String password) {
+			EntityManager em = DBUtil.getEmFactory().createEntityManager();
+			String qString = "Select u from Hczuserprofile u where u.username = :username and u.userpassword = :password";
+			TypedQuery<Hczuserprofile> q = em.createQuery(qString, Hczuserprofile.class);
+			q.setParameter("username", username);
+			q.setParameter("password", password);
+			Hczuserprofile user = null;
+			try {
+				user = q.getSingleResult();
+			} catch (Exception e) {
+			} finally {
+				em.close();
+			}
+			return user;
 		}
 }
