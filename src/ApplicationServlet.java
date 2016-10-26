@@ -128,7 +128,7 @@ public class ApplicationServlet extends HttpServlet {
 		stat.setStatus("In process");
 		
 		HCZApplicationStatusUtil.insert(stat);
-		System.out.println("Record inserted in status table");
+		
 		long status= stat.getStatusid();
 		session.setAttribute("Status", status);
 		
