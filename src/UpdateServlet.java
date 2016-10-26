@@ -164,7 +164,7 @@ public class UpdateServlet extends HttpServlet {
 			if(statusAprroval == 0){
 				status = "Application declined";
 				try {
-					SendMail.sendMail("aakshay@gmail.com","aakshay@gmail.com","Application Status at IPS","Thank you for applying at IPS. You didn not get the job. Bye.",false);
+					SendMail.sendMail("aakshay@gmail.com","aakshay@gmail.com","Application Status at IPS","Thank you for applying at IPS. You did not get the job. Bye.",false);
 				} catch (MessagingException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
