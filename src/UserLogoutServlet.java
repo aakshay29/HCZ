@@ -38,6 +38,10 @@ public class UserLogoutServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		session.invalidate();
+		
+		
+		String nextUrl = "/userLogin.jsp";
+		response.sendRedirect(request.getContextPath()+nextUrl);
 	}
 
 }

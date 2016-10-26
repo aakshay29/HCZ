@@ -160,7 +160,7 @@
 									<div class="form-group">
 										<label for="focusedinput" class="col-sm-2 control-label">Birthday</label>
 										<div class="col-sm-8">
-											<input type="text" type="text" class="form-control1" name="Birthday" placeholder="dd-Mon-YYYY">
+											<input type="text" type="text" class="form-control1" name="Birthday" placeholder="dd-MM-YYYY">
 										</div>
 									</div>
 									
